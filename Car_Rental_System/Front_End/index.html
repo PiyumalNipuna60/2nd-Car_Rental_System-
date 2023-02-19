@@ -985,7 +985,383 @@
 
 </section>
 
+<!-------------------------car rental dash----------------------------------------------------->
+<section class="container-fluid" id="carRentalContent">
+    <nav id="sidebarCus">
+        <div id="iconuser">
+        </div>
+        <div id="uibar">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a id="linkBookingReq" class="nav-link text-white" href="#"><i class="fas fa-solid fa-car-side"></i>  Booking Request</a>
+                </li>
+                <li class="nav-item">
+                    <a id="linkBookingRes" class="nav-link text-white" href="#"><i class="fas fa-solid fa-users"></i>  Booking Responses</a>
+                </li>
+                <li class="nav-item">
+                    <a id="linkPaymentCus" class="nav-link text-white" href="#"><i class="fas fa-user-cog"></i>  Payment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="sideUserDash">
 
+        <!--<p id="collagePara">
+            Welcome To Our Service.
+        </p>-->
+        <div class="col bg-transparent row overflow-scroll" style="height: 80vh;" id="carTable">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-dark text-white">
+                <tr>
+                    <th>Car Images</th>
+                    <th>Brand</th>
+                    <th>Details</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody id="tblCustomer1Json">
+                <tr>
+                    <td class="col-3">
+                        <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/front.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg"
+                                         src="assets/images/car1/back.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg"
+                                         src="assets/images/car1/side.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/internal.jpg">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleFade"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleFade"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="col-3 ">
+                        <div class="card-body">
+                            <h5 class="card-title ">2011 Toyota vitz </h5>
+                            <p class="card-text">Good Condition, 250 max speed.
+                                Rent Price for 30 days 2300$.</p>
+                        </div>
+                    </td>
+                    <td class="col-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
+                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
+                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
+                        </ul>
+                    </td>
+                    <td class="col-2">
+                        <ul>
+                            <li class="list-group-item"><b>$79/day</b></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-3">
+                        <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFade2">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/front.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/back.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/internal.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/side.jpg">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" data-bs-slide="prev"
+                                    data-bs-target="#carouselExampleFade2"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" data-bs-slide="next"
+                                    data-bs-target="#carouselExampleFade2"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="col-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Mazda 3 (axela) - Crystal Lights </h5>
+                            <p class="card-text">Good Condition,Max seed 140,
+                                Rent Price for 30 days 870$.</p>
+                        </div>
+                    </td>
+                    <td class="col-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
+                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
+                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
+                        </ul>
+                    </td>
+                    <td class="col-2">
+                        <ul>
+                            <li class="list-group-item"><b>$29/day</b></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-3">
+                        <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFade3">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/front.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/back.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/internal.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/side.jpg">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" data-bs-slide="prev"
+                                    data-bs-target="#carouselExampleFade3"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" data-bs-slide="next"
+                                    data-bs-target="#carouselExampleFade3"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="col-3">
+                        <div class="card-body">
+                            <h5 class="card-title">SUZUKI WAGON R FZ 2019</h5>
+                            <p class="card-text">Good Condition,Max speed 152,
+                                Rent Price for 30 days 1050$.</p>
+                        </div>
+                    </td>
+                    <td class="col-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
+                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
+                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
+                        </ul>
+                    </td>
+                    <td class="col-2">
+                        <ul>
+                            <li class="list-group-item"><b>$35/day</b></li>
+                        </ul>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="col-3">
+                        <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFade4">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/front.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/back.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/internal.jpg">
+                                </div>
+                                <div class="carousel-item">
+                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/side.jpg">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" data-bs-slide="prev"
+                                    data-bs-target="#carouselExampleFade4"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" data-bs-slide="next"
+                                    data-bs-target="#carouselExampleFade4"
+                                    type="button">
+                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-body">
+                            <h5 class="card-title">TOYOTA Voxy TRD </h5>
+                            <p class="card-text">Good Condition,Max speed 180.
+                                Rent Price for 30 days 1650$.</p>
+                        </div>
+                    </td>
+                    <td>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
+                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
+                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
+
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li class="list-group-item"><b>$55/day</b></li>
+                        </ul>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-------------------------Booking Req--------------------------------------------------------->
+<section id="dashUser" class="container-fluid bg-white">
+    <div>
+        <h1>Booking Request</h1>
+    </div>
+    <div class="row p-3">
+        <h3 class="h3  p-2 bg-warning text-black">Car and Driver Details</h3>
+        <div class="col-2">
+            <label for="cmbType" class="form-label mb-0">Car Type</label>
+            <select class="form-select" aria-label="Default select example" id="cmbType"
+                    name="type">
+                <option selected>- Select Car Type -</option>
+                <option value="1">General</option>
+                <option value="2">Premium</option>
+                <option value="3">Luxury</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label for="cmbRegistrationNo" class="form-label mb-0">Car Registration No</label>
+            <select class="form-select" aria-label="Default select example" id="cmbRegistrationNo"
+                    name="type">
+            </select>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarBrand" class="form-label mb-0">Brand</label>
+                <input type="text" class="form-control" id="txtCarBrand" name="carBrand" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarColor" class="form-label mb-0">Color</label>
+                <input type="text" class="form-control" id="txtCarColor" name="carColor" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarFuel" class="form-label mb-0">Fuel Type</label>
+                <input type="text" class="form-control" id="txtCarFuel" name="carFuel" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarTransmission" class="form-label mb-0">Transmission</label>
+                <input type="text" class="form-control" id="txtCarTransmission" name="carTransmission" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarNoOfPassengers" class="form-label mb-0">No Of Passengers</label>
+                <input type="text" class="form-control" id="txtCarNoOfPassengers" name="carNoOfPassengers" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarDailyRate" class="form-label mb-0">Daily Rate (Rs.)</label>
+                <input type="text" class="form-control" id="txtCarDailyRate" name="carDailyRate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarMonthlyRate" class="form-label mb-0">Monthly Rate (Rs.)</label>
+                <input type="text" class="form-control" id="txtCarMonthlyRate" name="carMonthlyRate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarFreeKmForPrice" class="form-label mb-0">Free Km For Price (Km)</label>
+                <input type="text" class="form-control" id="txtCarFreeKmForPrice" name="carFreeKmForPrice" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarFreeKmForDuration" class="form-label mb-0">Free Km For Duration (Km)</label>
+                <input type="text" class="form-control" id="txtCarFreeKmForDuration" name="carFreeKmForDuration" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarLossDamageWavier" class="form-label mb-0">Loss Damage Wavier (Rs.)</label>
+                <input type="text" class="form-control" id="txtCarLossDamageWavier" name="carLossDamageWavier" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarPriceForExtraKm" class="form-label mb-0">Price For Extra Km (Rs.)</label>
+                <input type="text" class="form-control" id="txtCarPriceForExtraKm" name="carPriceForExtraKm" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarCompleteKm" class="form-label mb-0">Complete Km</label>
+                <input type="text" class="form-control" id="txtCarCompleteKm" name="carCompleteKm" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <label class="form-label mb-0">Car Front View</label>
+            <div class="mb-3" id="divCarFrontView" style="height: 13vh; border: #fd0015 2px solid">
+
+            </div>
+        </div>
+        <div class="col-2">
+            <label class="form-label mb-0">Car Back View</label>
+            <div class="mb-3" id="divCarBackView" style="height: 13vh; border: #fd0015 2px solid">
+
+            </div>
+        </div>
+        <div class="col-2">
+            <label class="form-label mb-0">Car Side View</label>
+            <div class="mb-3" id="divCarSideView" style="height: 13vh; border: #fd0015 2px solid">
+
+            </div>
+        </div>
+        <div class="col-2">
+            <label class="form-label mb-0">Car Interior View</label>
+            <div class="mb-3" id="divCarInteriorView" style="height: 13vh; border: #fd0015 2px solid">
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="button" class="btn btn-danger mt-3 " id="nextbook">Next</button>
+        </div>
+    </div>
+
+
+</section>
 
 
 </body>
