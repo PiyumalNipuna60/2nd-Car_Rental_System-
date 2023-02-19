@@ -8,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan("lk.ijse.spring")
 @EnableWebMvc
 public class WebAppConfig {
-
+    private int code;
+    private String message;
+    private Object data;
 
 }
