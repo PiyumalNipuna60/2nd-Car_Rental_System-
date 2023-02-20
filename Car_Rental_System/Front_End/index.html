@@ -1453,5 +1453,73 @@
     </div>
 </section>
 
+<!-------------------------Booking Responses----------------------------------------------------->
+<section id="bookingRes" class="container-fluid bg-white">
+    <div class="row text-center"><h1 class="h1 display-5">Booking Responses</h1></div>
+    <table class="table table-hover table-bordered table-striped" id="bookingResponsesTbl">
+        <thead class="bg-warning" style="color: black">
+        <tr>
+            <th>Rent ID</th>
+            <th>Date</th>
+            <th>Pickup Date</th>
+            <th>Return Date</th>
+            <th>Registration No</th>
+            <th>Customer ID</th>
+            <th>Licence No</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="bookingResponsesTable">
+
+        </tbody>
+    </table>
+    <hr>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRentId" class="form-label mb-0">Rent ID</label>
+                <input type="text" class="form-control" id="txtRentId" name="rentId" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDate" class="form-label mb-0">Date</label>
+                <input type="text" class="form-control" id="txtDate" name="date" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtPickupDate" class="form-label mb-0">Pickup Date</label>
+                <input type="text" class="form-control" id="txtPickupDate" name="pickupDate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtReturnDate" class="form-label mb-0">Return Date</label>
+                <input type="text" class="form-control" id="txtReturnDate" name="returnDate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRegistrationNo" class="form-label mb-0">Registration No</label>
+                <input type="text" class="form-control" id="txtRegistrationNo" name="registrationNo" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtLicenceNo" class="form-label mb-0">Licence No</label>
+                <input type="text" class="form-control" id="txtLicenceNo" name="licenceNo" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="button" class="btn  mt-3 " id="btnDeleteRental"><i class="fas fa-trash"></i> Delete Rental</button>
+            <button type="button" class="btn mt-3" id="btnClearRental" style="background-color: #8e9090; color: white">Clear</button>
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>
