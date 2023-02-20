@@ -1363,6 +1363,95 @@
 
 </section>
 
+<!-------------------------Booking Req part 02----------------------------------------------------->
+<section class="container-fluid" id="bookingRes2">
+    <div class="row p-3">
+        <h3 class="h3  p-2 bg-warning text-black">Rental Details</h3>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarRentId" class="form-label mb-0">Rent ID</label>
+                <input type="text" class="form-control" id="txtCarRentId" name="carRentId" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarTodayDate" class="form-label mb-0">Today</label>
+                <input type="text" class="form-control" id="txtCarTodayDate" name="carTodayDate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarPickupDate" class="form-label mb-0">Pickup Date</label>
+                <input type="date" class="form-control" id="txtCarPickupDate" name="carPickupDate">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCarReturnDate" class="form-label mb-0">Return Date</label>
+                <input type="date" class="form-control" id="txtCarReturnDate" name="carReturnDate">
+            </div>
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-center">
+            <label class="form-check-label pr-5" for="needDriver">Need a driver? </label>
+            <input class="form-check-input" type="checkbox" value="yes" id="needDriver">
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDriverLicenceNo" class="form-label mb-0">Driver Licence No</label>
+                <input type="text" class="form-control" id="txtDriverLicenceNo" name="driverLicenceNo" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDriverName" class="form-label mb-0">Driver Name</label>
+                <input type="text" class="form-control" id="txtDriverName" name="driverName" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDriverAddress" class="form-label mb-0">Driver Address</label>
+                <input type="text" class="form-control" id="txtDriverAddress" name="driverAddress" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDriverContactNo" class="form-label mb-0">Driver Contact No</label>
+                <input type="text" class="form-control" id="txtDriverContactNo" name="driverContactNo" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDriverNIC" class="form-label mb-0">Driver NIC</label>
+                <input type="text" class="form-control" id="txtDriverNIC" name="driverNIC" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <h3 class="h3  p-2 bg-warning text-black">Payment Details</h3>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtPaymentId" class="form-label mb-0">Payment ID</label>
+                <input type="text" class="form-control" id="txtPaymentId" name="paymentId" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtPaymentAmount" class="form-label mb-0">Amount (Rs.)</label>
+                <input type="text" class="form-control" id="txtPaymentAmount" name="paymentAmount">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="button" class="btn btn-primary mt-3 " id="sendRequest">Send Request</button>
+            <button type="button" class="btn btn-warning mt-3 " id="btnCancleRental">Cancal</button>
+            <button type="button" class="btn btn-danger mt-3 " id="btnPreview"><< Preview</button>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
