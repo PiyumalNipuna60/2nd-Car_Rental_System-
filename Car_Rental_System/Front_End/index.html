@@ -1576,6 +1576,129 @@
     </div>
 </section>
 
+<!-------------------------maintences------------------------------------------------------------>
+<section class="container-fluid" id="mainteneceContent">
+    <div class="row text-center"><h1 class="h1 display-5">Maintenance</h1></div>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchRegistrationNo" class="form-label mb-0">Registration No</label>
+                <input type="text" class="form-control" id="txtSearchRegistrationNo"
+                       name="searchRegistrationNo">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchBrand" class="form-label mb-0">Brand</label>
+                <input type="text" class="form-control" id="txtSearchBrand"
+                       name="searchBrand" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchType" class="form-label mb-0">Type</label>
+                <input type="text" class="form-control" id="txtSearchType"
+                       name="searchType" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchTransmission" class="form-label mb-0">Transmission</label>
+                <input type="text" class="form-control" id="txtSearchTransmission"
+                       name="searchTransmission" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchColor" class="form-label mb-0">Color</label>
+                <input type="text" class="form-control" id="txtSearchColor"
+                       name="searchColor" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtSearchStatus" class="form-label mb-0">Status</label>
+                <input type="text" class="form-control" id="txtSearchStatus"
+                       name="searchStatus" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-end">
+        <div class="col-3 d-flex align-items-center justify-content-evenly">
+
+            <button type="button" class="btn" id="btnAddToMaintenance" style="background-color: green; color: white">Add To
+                Maintenance
+            </button>
+            <button type="button" class="btn" id="btnClearMaintenance" style="background-color: #4f4f50; color: white">Clear</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtMaintenanceId" class="form-label mb-0">Maintenance ID</label>
+                <input type="text" class="form-control" id="txtMaintenanceId"
+                       name="maintenanceId">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="cmbRegistrationNo" class="form-label mb-0">Registration No</label>
+                <select class="form-select" aria-label="Default select example"
+                        id="cmbRegistrationNos"
+                        name="carRegNo">
+                </select>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtToday" class="form-label mb-0">Date</label>
+                <input type="text" class="form-control" id="txtToday"
+                       name="todayD">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtCost" class="form-label mb-0">Cost (Rs.)</label>
+                <input type="text" class="form-control" id="txtCost"
+                       name="maintenanceCost">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtMaintenanceDetails" class="form-label mb-0">Details</label>
+                <input type="text" class="form-control" id="txtMaintenanceDetails"
+                       name="maintenanceDetails">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center justify-content-end">
+            <div class="col-3 d-flex align-items-center justify-content-evenly">
+
+                <button type="button" class="btn" id="btnMaintenancePaid" style="background-color: blue; color: white">Paid</button>
+                <button type="button" class="btn" id="btnClearPaid" style="background-color: #4f4f50; color: white">Clear</button>
+            </div>
+        </div>
+        <div class="row ms-0 me-0">
+            <h3 class="h3  p-2 m-3 text-black" style="background-color: yellow">All Maintenances</h3>
+        </div>
+        <div class="bg-light" style="height: 38vh">
+            <table class="table table-hover table-bordered table-striped" id="allMaintenancesTbl">
+                <thead style="background-color: black; color: white">
+                <tr>
+                    <th>Maintenance ID</th>
+                    <th>Registration No</th>
+                    <th>Date</th>
+                    <th>Details</th>
+                    <th>Cost</th>
+                </tr>
+                </thead>
+                <tbody id="tblAllMaintenances">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
