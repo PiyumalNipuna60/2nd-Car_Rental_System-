@@ -1805,6 +1805,148 @@
 
 </section>
 
+<!-------------------------responses------------------------------------------------------------>
+<section class="container-fluid" id="responsesContent">
+    <div class="row text-center"><h1 class="h1 display-5">Rental Returns</h1></div>
+    <hr>
+    <div class="row ml-0 mr-0 mt-2 mb-2 align-content-end ">
+        <div class="input-group d-flex align-items-center justify-content-center">
+            <div class="col-2">
+                <input type="text" class="form-control" id="txtReturnId" name="returnId">
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtReturnPaymentId" class="form-label mb-0">Payment ID</label>
+                <input type="text" class="form-control" id="txtReturnPaymentId"
+                       name="rentalPaymentId" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtSearchRentId" class="form-label mb-0">Rent ID</label>
+                <input type="text" class="form-control" id="txtSearchRentId"
+                       name="searchRentId">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtTotalPaidAmount" class="form-label mb-0">Total Paid Amount
+                    (Rs.)</label>
+                <input type="text" class="form-control" id="txtTotalPaidAmount"
+                       name="totalPaidAmount" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtTodayDate" class="form-label mb-0">Today</label>
+                <input type="text" class="form-control" id="txtTodayDate"
+                       name="todayDate" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtPickDate" class="form-label mb-0">Pickup Date</label>
+                <input type="text" class="form-control" id="txtPickDate"
+                       name="pickDate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRDate" class="form-label mb-0">Return Date</label>
+                <input type="text" class="form-control" id="txtRDate"
+                       name="rDate" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtRentForUseDates" class="form-label mb-0">Rent For Using Dates</label>
+                <input type="text" class="form-control" id="txtRentForUseDates"
+                       name="rentForUseDates" disabled>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtDamageCost" class="form-label mb-0">Damage Cost (Rs.)</label>
+                <input type="text" class="form-control" id="txtDamageCost"
+                       name="damageCost">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtTotalKm" class="form-label mb-0">Total Km</label>
+                <input type="text" class="form-control" id="txtTotalKm"
+                       name="totalKm">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="txtTotalPriceForExtraKm" class="form-label mb-0">Total Price For Extra
+                    Km</label>
+                <input type="text" class="form-control" id="txtTotalPriceForExtraKm"
+                       name="totalPriceForExtraKm">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row ms-0 me-0">
+        <div class="col-3">
+            <div class="form-floating mb-3">
+                <button type="button" class="btn mt-3 " id="btnCalPayment" style="background-color: red; color: white">Calculate
+                    Payment
+                </button>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtTotalPayments" class="form-label mb-0">Total Payments (Rs.)</label>
+                <input type="text" class="form-control" id="txtTotalPayments"
+                       name="totalPayments">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtBalance" class="form-label mb-0">Balance (Rs.)</label>
+                <input type="text" class="form-control" id="txtBalance"
+                       name="balance">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row d-flex align-items-center justify-content-end">
+        <div class="col-3">
+            <button type="button" class="btn" id="btnSubmitPayment" style="background-color: blue; color: white">Submit Payment
+            </button>
+            <button type="button" class="btn" id="btnClearPayment" style="background-color: #454547; color: white">Clear</button>
+        </div>
+    </div>
+    <hr>
+    <div class="bg-light" style="height: 28vh">
+        <table class="table table-hover table-bordered table-striped" id="carRentaltbl">
+            <thead style="background-color: black; color: white">
+            <tr>
+                <th>Rent ID</th>
+                <th>Date</th>
+                <th>Pickup Date</th>
+                <th>Return Date</th>
+                <th>Car Registration No</th>
+                <th>Customer ID</th>
+                <th>Driver Licence No</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="tableCarRental">
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
 </body>
 </html>
