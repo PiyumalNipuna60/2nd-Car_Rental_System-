@@ -1540,5 +1540,42 @@
 
 </section>
 
+<!-------------------------Payment Details------------------------------------------------------------>
+<section class="container-fluid" id="paymentDetailsContent">
+    <div class="row text-center"><h1 class="h1 display-5">Payment Details</h1></div>
+    <div class="row m-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div>
+                <label for="pickFromDate" class="form-label">From</label>
+                <input type="date" id="pickFromDate" class="form-control" name="fromDate"
+                       placeholder="Start Date">
+            </div>
+            <div>
+                <label for="pickFromDate" class="form-label">To</label>
+                <input type="date" id="pickToDate" class="form-control" name="toDate"
+                       placeholder="End Date">
+            </div>
+            <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment" style=" height: 36px;position: relative;top: 17px;">Search</button>
+        </div>
+    </div>
+    <div class="bg-light" style="height: 65vh">
+        <table class="table table-hover table-bordered table-striped" id="paymentsTbl">
+            <thead style="background-color: black; color: white">
+            <tr>
+                <th>Payment ID</th>
+                <th>Date</th>
+                <th>Amount (Rs.)</th>
+                <th>Rent ID</th>
+                <th>Customer ID</th>
+            </tr>
+            </thead>
+            <tbody id="tblPayments">
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
 </body>
 </html>
