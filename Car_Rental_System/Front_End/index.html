@@ -1947,6 +1947,75 @@
     </div>
 </section>
 
+<!-------------------------Income Reports------------------------------------------------------------>
+<section class="container-fluid" id="incomeReportContent">
+    <div class="row text-center"><h1 class="h1 display-5">Income Reports</h1></div>
+    <div class="row m-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div>
+                <label for="incomeFromDate" class="form-label">From</label>
+                <input type="date" id="incomeFromDate" class="form-control" name="incomeFromDate"
+                       placeholder="Start Date">
+            </div>
+            <div>
+                <label for="incomeToDate" class="form-label">To</label>
+                <input type="date" id="incomeToDate" class="form-control" name="incomeToDate"
+                       placeholder="End Date">
+            </div>
+            <button type="button" class="btn btn-primary mt-3" id="btnSearchIncome" style="position: relative;height: 35px;top: 18px;">Search</button>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <h3 class="h3  p-2 m-3 text-dark text-center">Payments</h3>
+    </div>
+    <div class="bg-light" style="height: 20vh">
+        <table class="table table-hover table-bordered table-striped" id="paymentsInDateRangeTbl">
+            <thead class="bg-dark text-white">
+            <tr>
+                <th>Payment ID</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Rent ID</th>
+                <th>Customer ID</th>
+            </tr>
+            </thead>
+            <tbody id="tblPaymentsInDateRange">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row ms-0 me-0">
+        <h3 class="h3  p-2 m-3 text-dark text-center">Maintenances</h3>
+    </div>
+    <div class="bg-light" style="height: 20vh">
+        <table class="table table-hover table-bordered table-striped" id="maintenancesInDateRangeTbl">
+            <thead class="bg-dark text-white">
+            <tr>
+                <th>Maintenance ID</th>
+                <th>Date</th>
+                <th>Cost</th>
+                <th>Details</th>
+                <th>Registration No</th>
+            </tr>
+            </thead>
+            <tbody id="tblMaintenancesInDateRange">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-6">
+            <label class="h4" style="color: black;position:relative; top: 28px; left: 53%">Total Income = </label>
+            <label class="h4" style="color: black;position:relative; top: 28px; left: 54%">Rs. </label>
+            <label class="h4 text-danger" id="lblTotalIncome"></label>
+        </div>
+    </div>
+</section>
+
+<!-------------------------Driver Dash------------------------------------------------------------>
+<section class="container-fluid" id="driverDashContent">
+
+</section>
 
 </body>
 </html>
