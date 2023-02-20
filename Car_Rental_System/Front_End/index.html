@@ -1700,5 +1700,111 @@
     </div>
 </section>
 
+<!-------------------------request------------------------------------------------------------>
+<section class="container-fluid" id="reqContent">
+    <div class="row text-center"><h1 class="h1 display-5">Rental Requests</h1></div>
+    <div class="row ms-0 me-0">
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtRentId" class="form-label mb-0">Rent ID</label>
+                <input type="text" class="form-control" id="txtRentId1"
+                       name="rentId" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtDate" class="form-label mb-0">Date</label>
+                <input type="text" class="form-control" id="txtDate1"
+                       name="date" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtPickupDate" class="form-label mb-0">Pickup Date</label>
+                <input type="text" class="form-control" id="txtPickupDate1"
+                       name="pickupDate" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtReturnDate" class="form-label mb-0">Return Date</label>
+                <input type="text" class="form-control" id="txtReturnDate1"
+                       name="returnDate" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-0 me-0">
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCarRegistrationNo" class="form-label mb-0">Car Registration
+                    No</label>
+                <input type="text" class="form-control" id="txtCarRegistrationNo"
+                       name="regNo" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtCusId" class="form-label mb-0">Customer ID</label>
+                <input type="text" class="form-control" id="txtCusId"
+                       name="cusId" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtDLicenceNo" class="form-label mb-0">Driver Licence No</label>
+                <input type="text" class="form-control" id="txtDLicenceNo"
+                       name="dLicenceNo" disabled>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="txtRentalStatus" class="form-label mb-0">Status</label>
+                <input type="text" class="form-control" id="txtRentalStatus"
+                       name="rentalStatus" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <button type="button" class="btn mt-3 " id="btnRentalAccept" style="background-color: blue; color: white">Accept</button>
+            <button type="button" class="btn mt-3" id="btnRentalReject" style="background-color: red; color: white">Reject</button>
+            <button type="button" class="btn mt-3" id="btnClearRental1" style="background-color: yellow; color: black">Clear</button>
+        </div>
+    </div>
+    <div class="row ml-0 mr-0 mt- mb-2 align-content-end ">
+        <div class="input-group d-flex align-items-center justify-content-start">
+            <div class="col-3">
+                <input type="text" id="searchRentalRequest" class="form-control"
+                       placeholder="Search"/>
+            </div>
+            <button type="button" class="btn btn-danger" id="btnSearchRentalRequest">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <div class="bg-light " style="height: 45vh">
+        <table class="table table-hover table-bordered table-striped" id="carRentalRequestTbl">
+            <thead style="background-color: black; color: white">
+            <tr>
+                <th>Rent ID</th>
+                <th>Date</th>
+                <th>Pickup Date</th>
+                <th>Return Date</th>
+                <th>Car Registration No</th>
+                <th>Customer ID</th>
+                <th>Driver Licence No</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="tblCarRentalRequests">
+
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+
 </body>
 </html>
