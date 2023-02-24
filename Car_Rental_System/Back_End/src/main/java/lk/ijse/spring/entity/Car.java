@@ -19,6 +19,7 @@ import java.util.List;
 @ToString
 @Entity
 public class Car {
+    private final String status = "Available";
     @Id
     private String registrationNO;
     private String brand;
@@ -38,8 +39,11 @@ public class Car {
     private double lossDamageWaiver;
     private double priceForExtraKm;
     private double completeKm;
-    private final String status="Available";
 
-@OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
-    private List<CarRent> rentals =new ArrayList();
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private List<CarRent> rentals = new ArrayList();
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private List<Maintenance> maintenances = new ArrayList<>();
 }
