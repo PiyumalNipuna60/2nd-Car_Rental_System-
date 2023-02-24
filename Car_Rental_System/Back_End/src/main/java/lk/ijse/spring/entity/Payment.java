@@ -10,20 +10,20 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Data
+@ToString
 @Entity
-public class CarRentReturn {
+public class Payment {
     @Id
-    private String returnId;
+    private String paymentId;
     private LocalDate date;
-    private double noOfKm;
+    private String accountNo;
+    private String accountHolderName;
+    private String bankName;
+    private String branchName;
+    private double amount;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "paymentId", referencedColumnName = "paymentId", nullable = false)
-    private Payment payment;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "rentId", referencedColumnName = "rentId", nullable = false)
+    @JoinColumn(name = "rentID", referencedColumnName = "rentID",nullable = false)
     private CarRent rental;
 }
