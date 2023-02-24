@@ -1,4 +1,4 @@
-package entity;
+package lk.ijse.spring.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,21 +7,16 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @ToString
+@Data
 @Entity
-public class Admin {
+public class CarRentReturn {
     @Id
-    private String adminId;
-    private String name;
-    private String address;
-    private String contact;
-    private String email;
-    private String username;
-    private String password;
-
+    private String returnId;
+    private LocalDate date;
+    private double noOfKm;
 }
