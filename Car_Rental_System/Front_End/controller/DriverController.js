@@ -1,4 +1,4 @@
-var baseUrl2="";
+var baseUrl2="http://localhost:8080/BackEnd_war/api/v1/driver";
 driverLoadTable();
 
 //save driver

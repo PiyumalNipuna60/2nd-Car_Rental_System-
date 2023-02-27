@@ -1,4 +1,4 @@
-var baseUrl4="";
+var baseUrl4="http://localhost:8080/BackEnd_war/api/v1/car";
 
 $("#addCar").click(function (){
     addCar();
