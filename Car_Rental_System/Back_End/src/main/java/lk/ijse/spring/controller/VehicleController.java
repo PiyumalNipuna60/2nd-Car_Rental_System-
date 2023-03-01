@@ -1,7 +1,7 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dto.CustomerDTO;
-import lk.ijse.spring.service.CustomerService;
+import lk.ijse.spring.dto.VehicleDTO;
+import lk.ijse.spring.service.VehicleService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,47 +13,49 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping("api/v1/customer")
+@RequestMapping("api/v1/vehicle")
 @CrossOrigin
-public class CustomerController {
+public class VehicleController {
     @Autowired
-    CustomerService customerService;
+    VehicleService vehicleService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllCustomers() {
-        return new ResponseUtil(200,"Ok",customerService.getAllCustomers());
+    public ResponseUtil getAllVehicles() {
+        return new ResponseUtil(200,"Ok",vehicleService.getAllVehicles());
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customerDTO) {
-        customerService.saveCustomer(customerDTO);
+    public ResponseUtil saveVehicle(@ModelAttribute VehicleDTO vehicleDTO) {
+        vehicleService.saveVehicle(vehicleDTO);
         return new ResponseUtil(200,"Ok",null);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO) {
-        customerService.updateCustomer(customerDTO);
+    public ResponseUtil updateVehicle(@RequestBody VehicleDTO vehicleDTO) {
+        vehicleService.updateVehicle(vehicleDTO);
         return new ResponseUtil(200,"Ok",null);
     }
 
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteCustomer(@RequestParam String id) {
-        customerService.deleteCustomer(id);
+    public ResponseUtil deleteVehicle(@RequestParam String id) {
+        vehicleService.deleteVehicle(id);
         return new ResponseUtil(200,"Ok",null);
     }
 
     @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil searchCustomer(@PathVariable String id) {
-        return new ResponseUtil(200,"Ok",customerService.searchCustomer(id));
+    public ResponseUtil searchVehicle(@PathVariable String id) {
+        return new ResponseUtil(200,"Ok",vehicleService.searchVehicle(id));
     }
 
-    @GetMapping(path = "/{nic}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil findNic(@PathVariable String nic) {
-        return new ResponseUtil(200,"ok",customerService.findNic(nic));
+    @GetMapping(path = "/brand/{brand}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findBrand(@PathVariable String brand) {
+        VehicleDTO vehicleDTO = vehicleService.findBrand(brand);
+        return new ResponseUtil(200, "Done", vehicleDTO);
     }
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveFile(@RequestPart("myFile") MultipartFile myFile) {
+        System.out.println(myFile.getOriginalFilename());
         try {
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
@@ -67,14 +69,5 @@ public class CustomerController {
             e.printStackTrace();
             return false;
         }
-    }
-
-    @PostMapping(path = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil findEmailAndPassword(@RequestBody CustomerDTO user) {
-        if (!user.getEmail().equals("") && !user.getPassword().equals("")) {
-            CustomerDTO dto = customerService.findEmailAndPassword(user.getEmail(), user.getPassword());
-            return new ResponseUtil(200, "done",dto);
-        }
-        throw new RuntimeException("Please Input User name And Password");
     }
 }
