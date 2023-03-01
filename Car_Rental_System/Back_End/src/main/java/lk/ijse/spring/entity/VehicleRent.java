@@ -1,4 +1,4 @@
-package lk.ijse.spring.entity;
+exeptionpackage lk.ijse.spring.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
