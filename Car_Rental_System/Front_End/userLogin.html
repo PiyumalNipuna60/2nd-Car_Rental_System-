@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental | Login Page</title>
+    <link rel="stylesheet" href="assets/css/UserLogin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<!-- Wrapper Area -->
+<div class="wrapper__area" id="wrapper_Area">
+    <!-- Forms Area -->
+    <div class="forms__area">
+
+        <!-- Login Form -->
+        <form class="login__form" id="loginForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Customer Sign In...</h1>
+            <!-- inputs Groups -->
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="email" placeholder="Email" id="loginEmail">
+                </label>
+                <span class="input__icon"><i class="bx bx-at"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password" id="loginPassword">
+                </label>
+                <span class="input__icon">
+                    <i class="bx bx-lock"></i>
+                </span>
+                <span class="showHide__Icon">
+                    <i class="bx bx-hide __web-inspector-hide-shortcut__"></i>
+                </span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="form__actions">
+            </div>
+            <!-- Login Button -->
+            <div class="submit-button">
+                <a href="#">
+                    <span type="button" class="submit-button login" id="loginSubmitBtn">Sign in</span>
+                </a>
+            </div>
+
+        </form> <!-- End Login Form -->
+
+
+        <!------------------- Sign Up Form ------------------------------>
+
+        <form class="sign-up__form" id="signUpForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Customer Sign Up!</h1>
+
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="email" placeholder="Email@example.com" id="signUpEmail">
+                </label>
+                <span class="input__icon"><i class="bx bx-at"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password123$#%&..." id="signUpPassword">
+                </label>
+                <!--                <span class="input__icon"><i class="bx bx-lock"></i></span>-->
+                <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="nic" placeholder="NIC Number" id="nic_number">
+                </label>
+                <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
+                <small class="input__error_message"></small>
+            </div>
+<!--            <div class="input__group">-->
+<!--                <div class="form-floating mb-3">-->
+<!--                    <input id="nicImage" name="nicImage" type="file" />-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="dlicense" placeholder="Driving licence number" id="dr_License">
+                </label>
+                <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
+                <small class="input__error_message"></small>
+            </div>
+
+<!--            <div class="input__group">-->
+<!--                <div class="form-floating mb-3">-->
+<!--                    <input id="dLicenseImage" name="dlicenseImage" type="file" />-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="address" placeholder="Address" id="u_address">
+                </label>
+                <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="contactNo" placeholder="Contact Number" id="cntct_num">
+                </label>
+                <!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
+                <small class="input__error_message"></small>
+            </div>
+
+
+
+            <!-- Sign Up Button -->
+            <button type="submit" class="submit-button" id="signUpSubmitBtn">Sign Up</button>
+
+        </form> <!-- End Sign Up Form -->
+    </div><!-- End Forms Area -->
+
+    <!-- Aside Area -->
+    <div class="aside__area" id="aside_Area">
+        <div class="login__aside-info">
+            <h4>Customer</h4>
+            <img src="assets/image/customer.png" alt="Image">
+            <button id="aside_signUp_Btn">Sign Up</button>
+        </div>
+        <div class="sign-up__aside-info">
+            <h4>Welcome</h4>
+            <img src="assets/image/customer.png" alt="Image">
+            <button id="aside_signIn_Btn">Sign In</button>
+        </div>
+    </div>
+</div>
+<!-- End Wrapper Area -->
+
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="assets/js/Login.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script>
+
+    //-----------------add user--------------------
+
+    $("#signUpSubmitBtn").click(function () {
+        saveCustomer();
+    });
+
+    function saveCustomer() {
+        var data = $("#signUpForm").serialize(); // return query string of form with name:type-value
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/customer",
+            method: "POST",
+            data: data,// if we send data with the request
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Successfully Customer Registered");
+                    // loadAllDrivers();
+                    // clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+    // function updateCustomer() {
+    //     //creating a js object with relevant data which you wanna send to the server
+    //     var cusOb = {
+    //         email:$("#signUpEmail").val(),
+    //     password :$("#signUpPassword").val(),
+    //     nic : $("#nic_number").val(),
+    //     dlicense : $("#dr_License").val(),
+    //     address : $("#u_address").val(),
+    //         contactNo :$("#cntct_num").val()
+    //     }
+    //
+    //     $.ajax({
+    //         url:"http://localhost:8080/BackEnd_war/api/v1/cutomer" ,
+    //         method: "PUT",
+    //         contentType: "application/json", //You should state request's content type using MIME types
+    //         data: JSON.stringify(cusOb), // format js object to valid json string
+    //         success: function (res) {
+    //             if (res.code == 200) { // process is  ok
+    //                 alert("Successfully Updated");
+    //                 // loadAllDrivers();
+    //                 // clearForm();
+    //             }
+    //         },
+    //         error: function (ob) {
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+    //
+    // function deleteDriver() {
+    //     let email = $("#signUpEmail").val();
+    //
+    //     // initiate the request
+    //     $.ajax({
+    //         url: "http://localhost:8080/BackEnd_war/api/v1/customer" + "?id=" + email,// viya query string
+    //         method: "DELETE",
+    //         //data:data,// application/x-www-form-urlencoded
+    //         success: function (res) {
+    //             if (res.code == 200) {
+    //                 alert("Customer Successfully Deleted");
+    //                 // loadAllDrivers();
+    //                 // clearForm();
+    //             }
+    //         },
+    //         error: function (ob) {
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+    //
+    // //Search Customer
+    // function searchCustomer() {
+    //     var email = $("#signUpEmail").val();
+    //
+    //     $.ajax({
+    //         url:  "http://localhost:8080/BackEnd_war/api/v1/customer" + "/" + email,
+    //         method: "GET",
+    //         success: function (res) {
+    //             if (res.code = 200) {
+    //                 var customer = res.data;
+    //
+    //                 $("#signUpEmail").val(customer.email),
+    //                     $("#signUpPassword").val(customer.password),
+    //                     $("#nic_number").val(customer.nic),
+    //                     $("#dr_License").val(customer.dlicense),
+    //                     $("#u_address").val(customer.address),
+    //                     $("#cntct_num").val(customer.contactNo)
+    //             } else {
+    //                 //clearForm();
+    //             }
+    //         },
+    //         error:function (ob){
+    //             alert(ob.message);
+    //         }
+    //     });
+    // }
+
+    // //Clear Customer Input Fields
+    // function clearForm() {
+    //     $("#did").focus();
+    //     $("#d_name").val();
+    //     $("#d_email").val();
+    //     $("#d_password").val();
+    //     $("#driver_nic").val();
+    //     $("#driver_license").val();
+    //     $("#d_address").val();
+    //     $("#d_contactNo").val();
+    //     $("#d_age").val();
+    //     $("#d_gender").val();
+    //     $("#did").focus();
+    // }
+
+
+
+    // $("#signUpSubmitBtn").click(()=>{
+    //
+    //     if (checkvalidationUser()){
+    //         //-----upload nic image file----------------------
+    //         var fileObject = $("#nicImage")[0].files[0];//access file object from input field
+    //         var fileName = $("#nicImage")[0].files[0].name; //get file name
+    //         var data = new FormData(); //setup form data object to send file data
+    //         data.append("myFile", fileObject, fileName); //append data
+    //         $.ajax({
+    //             url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //             method: "POST",
+    //             async: true,
+    //             processData: false, //stop processing data of request body
+    //             contentType: false, // stop setting content type by jQuery
+    //             data: data,
+    //             success: function () {
+    //                 alert("File Uploaded");
+    //
+    //                 //-----upload lic image file----------------------
+    //
+    //                 var fileObjectL = $("#dLicenseImage")[0].files[0];//access file object from input field
+    //                 var fileNameL = $("#dLicenseImage")[0].files[0].name; //get file name
+    //                 var dataL = new FormData(); //setup form data object to send file data
+    //                 dataL.append("myFile", fileObjectL, fileNameL); //append data
+    //                 $.ajax({
+    //                     url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //                     method: "POST",
+    //                     async: true,
+    //                     processData: false, //stop processing data of request body
+    //                     contentType: false, // stop setting content type by jQuery
+    //                     data: dataL,
+    //                     success: function () {
+    //
+    //                         alert("File Uploaded");
+    //
+    //                         let email = $("#signUpEmail").val();
+    //                         let password = $("#signUpPassword").val();
+    //                         let nic = $("#nic_number").val();
+    //                         let nicImage = $("#nicImage").val();
+    //                         let dlicense = $("#dr_License").val();
+    //                         let dlicenseImage = $("#dLicenseImage").val();
+    //                         let address = $("#u_address").val();
+    //                         let  contactNo = $("#cntct_num").val();
+    //
+    //                         $.ajax({
+    //                             method: "POST",
+    //                             url: "http://localhost:8080/BackEnd_war/api/v1/customer",
+    //                             contentType: 'application/json',
+    //                             async: true,
+    //                             data: JSON.stringify({
+    //                                 email: email,
+    //                                 password: password,
+    //                                 nic: nic,
+    //                                 nicImage: nicImage,
+    //                                 dlicense: dlicense,
+    //                                 dlicenseImage: dlicenseImage,
+    //                                 address: address,
+    //                                 contactNo: contactNo,
+    //
+    //                             }),
+    //
+    //
+    //                             success: function (data) {
+    //                                 if(data.message=='Success'){
+    //                                     alert('Registration Successful');
+    //                                 }
+    //                                 console.log(data);
+    //                                 //loadAllRegistrations();
+    //                             },
+    //                             // error: function (data) {
+    //                             //     console.log("error from : " + data);
+    //                             //     if(data.message!='Success'){
+    //                             //         alert('Registration UnSuccessful! Try again');
+    //                             //     }
+    //                             // }
+    //                         });
+    //
+    //                     }
+    //                 });
+    //             }
+    //         });
+    //     }
+    //
+    // });
+
+    // $(cusSaveBtnInCustomer).off('click');
+    // $(cusSaveBtnInCustomer).click(function () {
+    //     console.log("Cus Save Btn")
+    //     let data = new FormData();
+    //     let dto = {
+    //         nic: cusNicField.val(),
+    //         name: cusNameField.val(),
+    //         nicPhoto: "",
+    //         licenseNo: cusLicenseField.val(),
+    //         licensePhoto: "",
+    //         contactNo: parseInt(cusContactNoField.val()),
+    //         email: cusEmailField.val(),
+    //         password: cusPasswordField.val()
+    //     }
+    //     let nicPhotoFile = $("#cusNicFile")[0].files[0];
+    //     let nicPhotoFileName = $("#cusNicFile")[0].files[0].name;
+    //     let licensePhotoFile = $("#cusLicenseFile")[0].files[0];
+    //     let licensePhotoFileName = $("#cusLicenseFile")[0].files[0].name;
+    //     data.append("nicPhoto", nicPhotoFile, nicPhotoFileName);
+    //     data.append("licensePhoto", licensePhotoFile, licensePhotoFileName);
+    //     data.append("dto", new Blob([JSON.stringify(dto)], {type: "application/json"}));
+    //
+    //     if (confirm('Do you want to save this customer') == true) {
+    //         $.ajax({
+    //             url: baseUrl + "customer",
+    //             method: "POST",
+    //             async: true,
+    //             data: data,
+    //             processData: false,
+    //             contentType: false,
+    //             success: function (resp) {
+    //                 clearAllCustomerFields();
+    //                 alert(resp.message)
+    //             },
+    //             error: function (ob) {
+    //                 clearAllCustomerFields();
+    //                 alert(ob.message);
+    //             }
+    //         })
+    //     }
+    // })
+
+
+
+    //---------------------------------login---------------------------------------------------
+
+    $("#loginSubmitBtn").click(function () {
+
+        let re_email = $("#loginEmail").val();
+        let re_pass = $("#loginPassword").val()
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/BackEnd_war/api/v1/customer/login",
+            contentType: 'application/json',
+            data: JSON.stringify({
+                email: re_email,
+                password: re_pass
+            }),
+            success: function (data) {
+                if (data.code == "200") {
+                    window.location.href = "http://localhost:63342/Car_Rental_System/FrontEnd/userPage.html?_ijt=sk27tmc4msdmf4qlac68da5q1v"
+                }
+            }
+        });
+
+    });
+
+    //-----------get all registration--------------------------------------
+
+    // loadAllRegistrations();
+    //
+    // function loadAllRegistrations() {
+    //     $("#tblUser").empty();
+    //     $.ajax({
+    //         url: "http://localhost:8080/BackEnd_war/api/v1/registration",
+    //         method: "GET",
+    //         async: true,
+    //         dataType: "json",
+    //         success: function (data, textState, xhr) {
+    //
+    //             for (let i of data.data) {
+    //                 var row = `<tr><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.nicImage}</td><td>${i.dLicense}</td><td>${i.dLicenseImage}</td><td>${i.address}</td><td>${i.contactNo}</td></tr>`;
+    //
+    //                 $("#tblUser").append(row);
+    //             }
+    //         }
+    //     });
+    // }
+
+    //---------validation-------------
+
+    function checkvalidationUser() {
+
+        let usEmail = $('#signUpEmail').val();
+        let usPassword = $('#signUpPassword').val();
+        let usNic = $('#nic_number').val();
+        let usNicImg = $('#nicImage').val();
+        let usDrivingLic = $('#dr_License').val();
+        let usDrivingLicImg = $('#dLicenseImage').val();
+        let usAddress = $('#u_address').val();
+        let usContact = $('#cntct_num').val();
+
+        if (usEmail!=""){
+            if (usPassword!=""){
+                if(usNic!=""){
+                    if (usNicImg!=""){
+                        if (usDrivingLic!=""){
+                            if (usDrivingLicImg!=""){
+                                if (usAddress!=""){
+                                    if (usContact){
+                                        return true;
+                                    }else{
+                                        alert("Please Enter Contact Number");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Enter Address");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add License Image");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Enter Driving Licence No");
+                            return false;
+                        }
+                    }else{
+                        alert("Please Add NIC Image");
+                        return false;
+                    }
+                }else{
+                    alert("Please Enter NIC Number");
+                    return false;
+                }
+            }else {
+                alert("Please Enter Password");
+                return false;
+            }
+        }else{
+            alert("Please Enter Email");
+            return false;
+        }
+
+    }
+</script>
+
+
+
+</body>
+</html>

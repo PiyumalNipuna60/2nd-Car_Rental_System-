@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental | Admin Login</title>
+    <link rel="stylesheet" href="assets/css/AdminLogin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+
+<!-- Wrapper Area -->
+<div class="wrapper__area" id="wrapper_Area">
+    <!-- Forms Area -->
+    <div class="forms__area">
+        <!-- Login Form -->
+        <form class="login__form" id="loginForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Sign In!</h1>
+            <!-- inputs Groups -->
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="username" placeholder="Username" id="loginUsername">
+                </label>
+                <span class="input__icon"><i class="bx bx-user"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password" id="loginPassword">
+                </label>
+                <span class="input__icon">
+                    <i class="bx bx-lock"></i>
+                </span>
+                <span class="showHide__Icon">
+                    <i class="bx bx-hide __web-inspector-hide-shortcut__"></i>
+                </span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="form__actions">
+                <label for="checkboxInput" class="remeber_me">
+                    <input type="checkbox" id="checkboxInput">
+                    <span class="checkmark"></span>
+                    <span>Remeber Me</span>
+                </label>
+                <div class="forgot_password">Forgot Password?</div>
+            </div>
+            <!-- Login Button -->
+            <div class="submit-button">
+                <a href="admindashboard.html">
+                    <span  style="background-color: #6a89cc" type="submit" class="submit-button login-a" id="loginSubmitBtn">Sign in</span>
+                </a>
+            </div>
+
+        </form> <!-- End Login Form -->
+
+        <!-- Sign Up Form -->
+        <form class="sign-up__form" id="signUpForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Sign Up!</h1>
+            inputs Groups
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="username" placeholder="Username123..." id="signUpUsername">
+                </label>
+                <span class="input__icon"><i class="bx bx-user"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="email" placeholder="Email@example.com" id="signUpEmail">
+                </label>
+                <span class="input__icon"><i class="bx bx-at"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password123$#%&..." id="signUpPassword">
+                </label>
+                <span class="input__icon"><i class="bx bx-lock"></i></span>
+                <span class="showHide__Icon"><i class="bx bx-hide"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+
+            <!-- Sign Up Button -->
+            <button style="background-color: #6a89cc" type="submit" class="submit-button" id="signUpSubmitBtn">Sign Up</button>
+
+        </form> <!-- End Sign Up Form -->
+    </div><!-- End Forms Area -->
+
+    <!-- Aside Area -->
+    <div style="background-color: #6a89cc" class="aside__area" id="aside_Area">
+        <div class="login__aside-info">
+<!--            <img src="" alt="Image">-->
+            <button id="aside_signUp_Btn">Sign Up</button>
+        </div>
+        <div style="background-color: #6a89cc" class="sign-up__aside-info">
+            <h4>Welcome</h4>
+<!--            <img src="" alt="Image">-->
+            <button id="aside_signIn_Btn">Sign In</button>
+        </div>
+    </div>
+</div>
+<!-- End Wrapper Area -->
+
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="assets/js/AdminLogin.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script>
+
+
+    $("#signUpSubmitBtn").click(function () {
+        saveAdmin();
+    });
+
+    function saveAdmin() {
+        var data = $("#signUpForm").serialize(); // return query string of form with name:type-value
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/admin",
+            method: "POST",
+            data: data,// if we send data with the request
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Successfully Admin Registered");
+                    // loadAllDrivers();
+                    // clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+
+
+</script>
+</body>
+</html>

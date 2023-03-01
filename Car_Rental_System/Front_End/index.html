@@ -1,2542 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
     <meta charset="UTF-8">
-    <title>Easy_Car_Rental_System</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/fonts/css/all.min.css" rel="stylesheet">
-    <link href="assets/styles/allStyle.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="assets/css/HomePage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/gwb0rvj.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Easy Car Rental</title>
+
     <style>
-
-        body {
-            background-size: 90%;
-        }
-
-        #bgImageDashBoardDiv {
-            width: 100vw;
-            height: 100vh;
-            background: url("assets/images/online-car-rental-2.jpg");
-            background-size: 100% 100%;
-        }
-
-        #adminImage {
-            width: 100vw;
-            height: 100vh;
-            background: url("assets/images/blackCar.jpg");
-            background-size: 100% 100%;
-        }
-
-        #divIcon1 {
-            background: url("assets/images/icons/wedding.png");
-            background-size: 100% 100%;
-        }
-
-        #divIcon2 {
-            background: url("assets/images/icons/city.png");
-            background-size: 100% 100%;
-        }
-
-        #divIcon3 {
-            background: url("assets/images/icons/air.png");
-            background-size: 100% 100%;
-        }
-
-        #divIcon4 {
-            background: url("assets/images/icons/whole.png");
-            background-size: 100% 100%;
-        }
-        #iconuser{
-            width:80px;
-            height: 80px;
-            background: url("assets/images/icons/user.png");
-            position: absolute;
-            top: 10px;
-            left: 40px;
-        }
-        #sideUserDash{
-            position: absolute;
-            left: 15vw;
-            width: 85vw;
-            height: 100vh;
-            background: white;
-            background-size: 100% 100%;
+        .home{
+            background-image: linear-gradient(rgba(0, 0, 0, 0),#2c3034),url("assets/image/car4.jpg");
         }
     </style>
 </head>
+
 <body>
-<!--..............Nav Content Start............................------------------>
-<section class="container-fluid" id="NavContent">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark navtop">
-        <div class="container-fluid">
-            <a class="navbar-brand " href="">Easy_Car_Rental_System</a>
-            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler"
-                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a aria-current="page" class="nav-link active navigation" href="#" id="linkHome">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkServices">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkCarDetails">Car Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkLogin">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navigation" href="#" id="linkSignUp">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="nav">
+
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">Booking.com</a>
         </div>
-    </nav>
-</section>
-
-<!----------------------Dash Board Content Start--------------------------------->
-<section class="container-fluid" id="dashBoardContent">
-    <div id="bgImageDashBoardDiv">
-        <div id="descriptionDiv">
-<!--            <h1 id="dis1">FIND THE RIGHT <br>CAR FOR YOU</h1>-->
-<!--            <h2 id="dis2">We have more<br>cars for you to choose.</h2>-->
-        </div>
-    </div>
-</section>
-
-<!------------------------login content Start------------------------------------>
-<section class="container-fluid">
-    <div id="loginForm" >
-        <div class="gradient-custom  justify-content-center align-items-center">
-            <button class="btn-close" data-bs-dismiss="offcanvas" id="loginCloseBtn" type="button"></button>
-            <div class="card text-white" style="border-radius: 1rem;">
-                <div class="card-body p-2 text-center ">
-
-                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                    <p class="text-white-50 mb-3">Please enter your User Name and password!</p>
-                    <div class="form-outline form-white mb-4">
-                        <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeEmailX">User Name</label>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="index.html">Home</a></li>
+<!--                <li><a href="#about-us">About us</a></li>-->
+                <li><a href="#cars">Vehicles</a></li>
+                <li><a href="tel:0769050886">Contact</a></li>
+                <li><a href="#">Login</a>
+                    <div class="sub-list">
+                        <ul>
+                            <li><a href="userLogin.html">User</a></li>
+                            <li><a href="adminLogin.html"> Admin</a></li>
+                            <li><a href="driverLogin.html">Driver</a></li>
+                        </ul>
                     </div>
-                    <div class="form-outline form-white mb-4">
-                        <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typePasswordX">Password</label>
-                    </div>
-                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-                    <button class="btn btn-outline-light btn-lg px-5" type="submit" id="loginBtn">Login</button>
-
-                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                    </div>
-                    <div>
-                        <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-----------------------sign up content Start------------------------------------>
-<section class="container-fluid" id="signUp">
-    <div class="bg-white">
-        <section class="container-fluid p-3 bg-black text-white">
-            <h1 class="fw-bold">New User Registration</h1>
-        </section>
-        <section class="container-fluid mt-3" >
-            <!--    customer save-->
-            <div class="row mt-3">
-                <div class="col-4">
-                    <form id="customerForm">
-                        <section id="sec1">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusID">User ID</label>
-                                <input class="form-control" id="cusID" name="id" placeholder="User ID" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusName">User Name</label>
-                                <input class="form-control" id="cusName" name="name" placeholder="User Name"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusAddress">User Address</label>
-                                <input class="form-control" id="cusAddress" name="address" placeholder="User Address"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusContact">Contact No</label>
-                                <input class="form-control" id="cusContact" name="Contact" placeholder="Contact No"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusEmail">Email</label>
-                                <input class="form-control" id="cusEmail" name="Email" placeholder="Email"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec2">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusNic">NIC No</label>
-                                <input class="form-control" id="cusNic" name="NIC" placeholder="NIC No"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="imgNiCFront">NIC Front Image</label>
-                                <input type="file" class="form-control" id="imgNiCFront" name="imgFrontView">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="imgNiCBack">NIC Back Image</label>
-                                <input type="file" class="form-control" id="imgNiCBack" name="imgBackView">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusLicence">Licence No</label>
-                                <input class="form-control" id="cusLicence" name="Licence" placeholder="Licence No"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="imgLicence">Licence Image</label>
-                                <input type="file" class="form-control" id="imgLicence" name="imgLicence">
-                            </div>
-
-                        </section>
-
-                        <section id="sec3">
-
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="cusUserName">User Name</label>
-                                <input class="form-control" id="cusUserName" name="UserName" placeholder="User Name"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="password">Password</label>
-                                <input class="form-control" id="password" name="Password" placeholder="Password"
-                                       type="text">
-                            </div>
-                            <div class="row-cols-1 m-3">
-                                <button type="button" class="btn btn-success" id="registerBtn">Register</button>
-                            </div>
-                        </section>
-
-                    </form>
-                </div>
-
-            </div>
-
-        </section>
-    </div>
-
-</section>
-
-<!------------------------Admin Dash Board content start-------------------------->
-<section class="container-fluid" id="adminDash">
-    <div id="adminImage">
-        <nav id="sidebar">
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a id="linkHomeAdmin" class="nav-link text-white" href="#"><i class="fas fa-solid fa-car-side"></i>  DashBoard</a>
                 </li>
-                <li class="nav-item">
-                    <a id="linkCarManage" class="nav-link text-white" href="#"><i class="fas fa-solid fa-car-side"></i>  Manage Car</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkDriver" class="nav-link text-white" href="#"><i class="fas fa-solid fa-users"></i>  Manage Driver</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkCustomer" class="nav-link text-white" href="#"><i class="fas fa-user-cog"></i>  Manage Customer</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkPayment" class="nav-link text-white" href="#"><i class="fas fa-solid fa-credit-card"></i>  Manage Payment</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkMaintenance" class="nav-link text-white" href="#"><i class="fas fa-solid fa-screwdriver"></i>  Manage Maintenance</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkReq" class="nav-link text-white" href="#"><i class="fas fa-solid fa-screwdriver"></i>  Requests</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkRentalReturn" class="nav-link text-white" href="#"><i class="fas fa-solid fa-screwdriver"></i>  Rental returns</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkIncomeReports" class="nav-link text-white" href="#"><i class="fas fa-solid fa-screwdriver"></i>  Income Reports</a>
-                </li>
-            </ul>
-        </nav>
-        <section id="dashside">
-            <div id="dashboard-pg">
-                <div class="dashboard">
-                    <!--  <div class="d-flex align-items-center">
-                          <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                          <h2 class="fs-2 m-0">DASHBOARD</h2>
-                      </div>-->
-                    <div class="full-space container-fluid px-4">
-                        <div class="details-space row g-3 my-2">
-                            <div class="col-md-4">
-                                <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                    <div>
-                                        <h3 class="fs-2 text-center">00</h3>
-                                        <p class="fs-5">Pending Customer</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-4">
-                                <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                    <div>
-                                        <h3 class="fs-2 text-center">00</h3>
-                                        <p class="fs-5">Requested Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                    <div>
-                                        <h3 class="fs-2 text-center">00</h3>
-                                        <p class="fs-5">Daily Rent</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="full-space container-fluid px-4">
-                            <div class="details-space row g-3 my-2">
-                                <div class="col-md-4">
-                                    <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                        <div>
-                                            <h3 class="fs-2 text-center">00</h3>
-                                            <p class="fs-5">Available Cars</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                        <div>
-                                            <h3 class="fs-2 text-center">00</h3>
-                                            <p class="fs-5">Rent Cars</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="p-3 bg-white d-flex justify-content-around align-items-center details-box">
-                                        <div>
-                                            <h3 class="fs-2 text-center">00</h3>
-                                            <p class="fs-5">Available Drivers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <h2 class="text-center">Daily Rent Car Details</h2>
-                    <br>
-                    <div class="col">
-                        <table class="table table-bordered table-hover">
-                            <thead class="bg-warning text-black">
-                            <tr>
-                                <th>Rent ID</th>
-                                <th>Date</th>
-                                <th>Release Date</th>
-                                <th>Return Date</th>
-                                <th>Customer ID</th>
-                                <th>Car Reg.No</th>
-                                <th>Driving Lic.No</th>
-                                <th>Status</th>
-                            </tr>
-                            </thead>
-                            <tbody id="tblDailyRentDetailsJson">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-</section>
-
-<!------------------------Manage Car table content-------------------------------->
-<section class="container-fluid" id="ManageTableCar">
-    <div id="manageCarTableContent">
-        <div class="col">
-            <table class="table table-bordered table-hover">
-                <thead class="bg-white text-black">
-                <tr>
-                    <th>Register No</th>
-                    <th>Brand</th>
-                    <th>Type</th>
-                    <th>No of passengers</th>
-                    <th>Transmission Type</th>
-                    <th>Fuel tYpe</th>
-                    <th>Daily Rate</th>
-                    <th>Monthly Rate</th>
-                    <th>Free mileage Price</th>
-                    <th>Free mileage Duration</th>
-                    <th>loss Damage waiver</th>
-                    <th>Price for Extra KM</th>
-                    <th>Complete KM</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody id="tblCustomerJson">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row-cols-2">
-        <button type="button" class="btn btn-warning" id="manageCarDetails" href="#">Manage Car Details >></button>
-    </div>
-</section>
-
-<!------------------------Manage Car content-------------------------------------------------->
-<section class="container-fluid" id="manageCar">
-    <div id="manageCarContent">
-        <section class="container-fluid  bg-black text-white">
-            <h1 class="fw-bold">Manage Car</h1>
-        </section>
-        <section class="container-fluid mt-3" >
-            <div class="row mt-3">
-                <div class="col-4">
-                    <form id="carForm">
-                        <section id="sec1Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carRegisterId">Register ID</label>
-                                <input class="form-control" id="carRegisterId" name="id" placeholder="Register ID" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carBrand">Car Band(ex:Toyota,Suzuki) </label>
-                                <input class="form-control" id="carBrand" name="brand" placeholder="Car Brand"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carType">Car Type(ex: mini,luxury)</label>
-                                <input class="form-control" id="carType" name="type" placeholder="Car Type"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carPassengers">No Of Passengers</label>
-                                <input class="form-control" id="carPassengers" name="passengers" placeholder="No of Passengers"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carTransmissionType">Transmission Type(Auto,Manual)</label>
-                                <input class="form-control" id="carTransmissionType" name="transmission" placeholder="Transmission Type"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="fuelType">Fuel Type(Diesel,Petrol)</label>
-                                <input class="form-control" id="fuelType" name="fuel" placeholder="Fuel Type"
-                                       type="text">
-                            </div>
-                            <div class="row-cols-2">
-                                <button type="button" class="btn btn-warning" id="LinkBackToTable" href="#"><< back</button>
-                            </div>
-                        </section>
-                        <section id="sec2Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="carColor">Color</label>
-                                <input class="form-control" id="carColor" name="Color" placeholder="Color"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="dailyRate">Daily rate</label>
-                                <input class="form-control" id="dailyRate" name="dailyRate" placeholder="Daily Rate"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="monthlyRate">Monthly Rate</label>
-                                <input class="form-control" id="monthlyRate" name="monthlyRate" placeholder="Monthly Rate"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="mileagePrice">Free Mileage Price</label>
-                                <input class="form-control" id="mileagePrice" name="mileagePrice" placeholder="Free Mileage Price"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="mileageDuration">Free Mileage Duration</label>
-                                <input class="form-control" id="mileageDuration" name="mileageDuration" placeholder="Free Mileage Duration"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="priceOfExtraKM">Price Of Extra KM</label>
-                                <input class="form-control" id="priceOfExtraKM" name="priceOfExtraKM" placeholder="Price Of Extra KM"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec3Car">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="lossDamageWaiver">loss Damage Waiver</label>
-                                <input class="form-control" id="lossDamageWaiver" name="lossDamageWaiver" placeholder="loss Damage Waiver"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="completeKm">Complete Km</label>
-                                <input class="form-control" id="completeKm" name="completeKm" placeholder="Complete Km"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="frontViewIm">Front View Image</label>
-                                <input type="file" class="form-control" id="frontViewIm" name="frontViewIm">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="backViewIm">Back View Image</label>
-                                <input type="file" class="form-control" id="backViewIm" name="backViewIm">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="sideViewIm">Side View Image</label>
-                                <input type="file" class="form-control" id="sideViewIm" name="sideViewIm">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="internalViewIm">Internal View Image</label>
-                                <input type="file" class="form-control" id="internalViewIm" name="internalViewIm">
-                            </div>
-
-                            <div class="row-cols-4">
-                                <button type="button" class="btn btn-success" id="addCar">Save</button>
-                                <button type="button" class="btn btn-primary" id="updateCar">Update</button>
-                                <button type="button" class="btn btn-danger" id="deleteCar">Delete</button>
-                            </div>
-                        </section>
-
-                    </form>
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-</section>
-
-<!-----------------------Services Form Start-------------------------------------------------->
-<section class="container-fluid" id="serviceContent">
-    <div class="row justify-content-center" id="serviceInfoTitle">
-        <div class="col">
-            <h1><strong>Our Latest Services</strong></h1>
-        </div>
-    </div>
-    <div class="row" id="serviceInfoDiv">
-        <div class="col-md-3">
-            <div class="services services-2 w-100 text-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <div class="divIcon" id="divIcon1"></div>
-                </div>
-                <div class="text w-100">
-                    <h3 class="heading mb-2">Wedding Ceremony</h3>
-                    <p class="lh-lg">If you're one of the people who has always wanted to have a grand wedding and
-                        arrive in style, this is the article for you. Here is a listicle of some
-                        wedding car hire services that will give you a lavish and comfortable transport experience. Be
-                        it your market sprees or picking your guests up, they won't disappoint you.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="services services-2 w-100 text-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <div class="divIcon" id="divIcon2"></div>
-                </div>
-                <div class="text w-100">
-                    <h3 class="heading mb-2">City Transfer</h3>
-                    <p class="lh-lg">According to our data, Easy Car-Rental is the cheapest rental car agency in Sri
-                        Lanka. Depending on the city you visit, what type of car you’re interested in, and
-                        the length of your rental, you could find prices for as low as $28 each day when booking with
-                        Easy Car-Rental.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="services services-2 w-100 text-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <div class="divIcon" id="divIcon3"></div>
-                </div>
-                <div class="text w-100">
-                    <h3 class="heading mb-2">Airport Transfer</h3>
-                    <p class="lh-lg">We wait for you at the airport to take you to your accommodation by private
-                        transport. 24/7 service from or to the airport at any time you need it. Book your transfer. Make
-                        A Booking. 24/7 E-Mail Support. Services: All payment options, 24 hours service, Car, SUV.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="services services-2 w-100 text-center">
-                <div class="icon d-flex align-items-center justify-content-center">
-                    <div class="divIcon" id="divIcon4">
-
-                    </div>
-                </div>
-                <div class="text w-100">
-                    <h3 class="heading mb-2">Whole City Tour</h3>
-                    <p class="lh-lg">fascinating journey through the vibes & sounds of a multicultural, multi-religion
-                        capital. Crowded street markets, slums and uprising urban lifestyle of the war-torn country.Bargain street markets and chic joints. All to remember and take good memories of
-                        Sri Lanka with you!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-----------------------Manage User---------------------------------------------------------->
-<section class="container-fluid" id="manageUser">
-    <section class="container-fluid  bg-black text-white">
-        <h1 class="fw-bold">Manage User</h1>
-    </section>
-    <div id="manageUserTable">
-        <div class="col-5">
-            <table class="table table-bordered table-hover">
-                <thead class="bg-white text-black">
-                <tr>
-                    <th>Customer ID</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Contact NO</th>
-                    <th>email</th>
-                    <th>NIC No</th>
-                    <th>NIC Front Image</th>
-                    <th>NIC Back Image</th>
-                    <th>Licence NO</th>
-                    <th>Licence Image</th>
-                    <th>UserName</th>
-                    <th>Password</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody id="tblUserJson">
-                <tr>
-                    <td>C001</td>
-                    <td>Chandana</td>
-                    <td>Matara</td>
-                    <td>0719543011</td>
-                    <td>chandana@gmail.com</td>
-                    <td>97857362V</td>
-                    <td></td>
-                    <td></td>
-                    <td>65788890</td>
-                    <td></td>
-                    <td>saman</td>
-                    <td>saman1234</td>
-                    <td>pending</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<!------------------------Manage Driver content----------------------------------------------->
-<section class="container-fluid" id="manageDriver">
-    <div id="manageDriverContent">
-        <section class="container-fluid  bg-black text-white">
-            <h1 class="fw-bold">Manage Driver</h1>
-        </section>
-        <section class="container-fluid mt-3" >
-            <div class="row mt-3">
-                <div class="col-4">
-                    <form id="driverForm">
-                        <section id="sec1Driver">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="driverLicenceNo">Licence NO</label>
-                                <input class="form-control" id="driverLicenceNo" name="id" placeholder="Register ID" type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="name">Name </label>
-                                <input class="form-control" id="name" name="name" placeholder="Name"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="address">Address</label>
-                                <input class="form-control" id="address" name="address" placeholder="Address"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec2Driver">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="contactNo">Contact Number</label>
-                                <input class="form-control" id="contactNo" name="contactNo" placeholder="Contact No"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="nicNo">NIC NO</label>
-                                <input class="form-control" id="nicNo" name="nicNo" placeholder="NIC NO"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="driverUserName">User Name</label>
-                                <input class="form-control" id="driverUserName" name="driverUserName" placeholder="User Name"
-                                       type="text">
-                            </div>
-                        </section>
-                        <section id="sec3Driver">
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="driverPassword">Password</label>
-                                <input class="form-control" id="driverPassword" name="driverPassword" placeholder="Driver Password"
-                                       type="text">
-                            </div>
-                            <div class="mb-sm-0">
-                                <label class="form-label" for="availability">Availability</label>
-                                <input class="form-control" id="availability" name="availability" placeholder="Availability"
-                                       type="text">
-                            </div>
-                            <div class="row-cols-4">
-                                <button type="button" class="btn btn-success" id="addDriverBtn">Save</button>
-                                <button type="button" class="btn btn-primary" id="updateDriver">Update</button>
-                                <button type="button" class="btn btn-danger" id="deleteDriver">Delete</button>
-                            </div>
-                        </section>
-                    </form>
-                </div>
-                <div id="manageDriverTable">
-                    <div class="col-5">
-                        <table class="table table-bordered table-hover">
-                            <thead class="bg-white text-black">
-                            <tr>
-                                <th>Licence NO</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Contact NO</th>
-                                <th>NIC No</th>
-                                <th>UserName</th>
-                                <th>Password</th>
-                                <th>Availability</th>
-                            </tr>
-                            </thead>
-                            <tbody id="tblDriverJson">
-                            <tr>
-                                <td>C001</td>
-                                <td>Chandana</td>
-                                <td>Matara</td>
-                                <td>0719543011</td>
-                                <td>97857362V</td>
-                                <td>saman</td>
-                                <td>saman1234</td>
-                                <td>true</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-
-<!---------------------------Car detailsContent Start------------------------------------------>
-<section class="container-fluid" id="carContent">
-    <div class="col bg-transparent row overflow-scroll" style="height: 80vh;" id="carTable1">
-        <table class="table table-bordered table-hover">
-            <thead class="bg-dark text-white">
-            <tr>
-                <th>Car Images</th>
-                <th>Brand</th>
-                <th>Details</th>
-                <th>Price</th>
-            </tr>
-            </thead>
-            <tbody id="tblCarJson">
-            <tr>
-                <td class="col-3">
-                    <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFades1">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/front.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg"
-                                     src="assets/images/car1/back.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg"
-                                     src="assets/images/car1/side.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/internal.jpg">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleFade"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleFade"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </td>
-                <td class="col-3 ">
-                    <div class="card-body">
-                        <h5 class="card-title ">2011 Toyota vitz </h5>
-                        <p class="card-text">Good Condition, 250 max speed.
-                            Rent Price for 30 days 2300$.</p>
-                    </div>
-                </td>
-                <td class="col-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                        <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                        <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                    </ul>
-                </td>
-                <td class="col-2">
-                    <ul>
-                        <li class="list-group-item"><b>$79/day</b></li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-3">
-                    <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFades2">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/front.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/back.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/internal.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/side.jpg">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" data-bs-slide="prev"
-                                data-bs-target="#carouselExampleFade2"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" data-bs-slide="next"
-                                data-bs-target="#carouselExampleFade2"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </td>
-                <td class="col-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Mazda 3 (axela) - Crystal Lights </h5>
-                        <p class="card-text">Good Condition,Max seed 140,
-                            Rent Price for 30 days 870$.</p>
-                    </div>
-                </td>
-                <td class="col-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                        <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                        <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                    </ul>
-                </td>
-                <td class="col-2">
-                    <ul>
-                        <li class="list-group-item"><b>$29/day</b></li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-3">
-                    <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFades3">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/front.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/back.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/internal.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/side.jpg">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" data-bs-slide="prev"
-                                data-bs-target="#carouselExampleFade3"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" data-bs-slide="next"
-                                data-bs-target="#carouselExampleFade3"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </td>
-                <td class="col-3">
-                    <div class="card-body">
-                        <h5 class="card-title">SUZUKI WAGON R FZ 2019</h5>
-                        <p class="card-text">Good Condition,Max speed 152,
-                            Rent Price for 30 days 1050$.</p>
-                    </div>
-                </td>
-                <td class="col-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                        <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                        <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                    </ul>
-                </td>
-                <td class="col-2">
-                    <ul>
-                        <li class="list-group-item"><b>$35/day</b></li>
-                    </ul>
-                </td>
-
-            </tr>
-            <tr>
-                <td class="col-3">
-                    <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFades4">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/front.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/back.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/internal.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/side.jpg">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" data-bs-slide="prev"
-                                data-bs-target="#carouselExampleFade4"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" data-bs-slide="next"
-                                data-bs-target="#carouselExampleFade4"
-                                type="button">
-                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </td>
-                <td>
-                    <div class="card-body">
-                        <h5 class="card-title">TOYOTA Voxy TRD </h5>
-                        <p class="card-text">Good Condition,Max speed 180.
-                            Rent Price for 30 days 1650$.</p>
-                    </div>
-                </td>
-                <td>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                        <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                        <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li class="list-group-item"><b>$55/day</b></li>
-                    </ul>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-</section>
-
-<!-------------------------car rental dash----------------------------------------------------->
-<section class="container-fluid" id="carRentalContent">
-    <nav id="sidebarCus">
-        <div id="iconuser">
-        </div>
-        <div id="uibar">
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a id="linkBookingReq" class="nav-link text-white" href="#"><i class="fas fa-solid fa-car-side"></i>  Booking Request</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkBookingRes" class="nav-link text-white" href="#"><i class="fas fa-solid fa-users"></i>  Booking Responses</a>
-                </li>
-                <li class="nav-item">
-                    <a id="linkPaymentCus" class="nav-link text-white" href="#"><i class="fas fa-user-cog"></i>  Payment</a>
-                </li>
             </ul>
         </div>
-    </nav>
-    <div id="sideUserDash">
+        <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+    </div>
+</nav>
 
-        <!--<p id="collagePara">
-            Welcome To Our Service.
-        </p>-->
-        <div class="col bg-transparent row overflow-scroll" style="height: 80vh;" id="carTable">
-            <table class="table table-bordered table-hover">
-                <thead class="bg-dark text-white">
-                <tr>
-                    <th>Car Images</th>
-                    <th>Brand</th>
-                    <th>Details</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                <tbody id="tblCustomer1Json">
-                <tr>
-                    <td class="col-3">
-                        <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFade">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/front.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg"
-                                         src="assets/images/car1/back.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg"
-                                         src="assets/images/car1/side.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car1/internal.jpg">
+<section class="home">
+    <h1 class="title"></h1>
+    <h1 class="header"></h1>
+    <br>
+    <br>
+    <br>
+    <h1 class="text"></h1>
+    <div >
+        <a href="userLogin.html">
+<!--            <span class="btn-rent-now" style="font-size: 20px">RENT NOW!</span>-->
+        </a>
+    </div>
+</section>
+
+<!--<section id="about-us" class="about-us-section">-->
+<!--    <h2 class="about-us-text-one"></h2>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <img class="img-about-us" src="assets/image/car5.jpg">-->
+<!--    <h2 class="about_us_h2">Booking.com</h2>-->
+<!--    <pre class="about_us_pre">-->
+<!--        Secure Your Car Hire Today.The Best Price Guaranteed.-->
+<!--            Book at Over 53,000 Locations.-->
+<!--                We Speak Your Language.-->
+<!--                    No Credit Card Fees.-->
+<!--                        Unbeatable Prices.-->
+
+<!--        <b>Types:</b>  Economy, Mini,-->
+<!--                Compact, People carrier,-->
+<!--                Intermediate, Premium,-->
+<!--                4x4, Estate, SUV, Convertible.-->
+<!--        </pre>-->
+
+<!--    <p class="about_us_p">About Us</p>-->
+<!--</section>-->
+
+<section id="cars">
+    <div class="text-center">
+        <h1 class="car-header" ></h1>
+        <!--    <span>Create With <i class="zmdi zmdi-favorite red"></i>  By: <strong>Deni Kurniawan</strong> From: <i><a href="http://blog.wingerdstok.com" class="wsk-btn">Wingerdstok</a></i></span>-->
+    </div>
+    <div class="shell">
+        <div id="car" class="container">
+            <h2 class="car-title"><span class="car-title-text" style="color: #0e344e"> General Cars</span></h2>
+            <hr>
+            <br>
+            <div class="Slider-Container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg1.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Alto</h3>
+                                        </div>
+                                        <hr>
+
+                                    </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleFade"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleFade"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="col-3 ">
-                        <div class="card-body">
-                            <h5 class="card-title ">2011 Toyota vitz </h5>
-                            <p class="card-text">Good Condition, 250 max speed.
-                                Rent Price for 30 days 2300$.</p>
-                        </div>
-                    </td>
-                    <td class="col-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                        </ul>
-                    </td>
-                    <td class="col-2">
-                        <ul>
-                            <li class="list-group-item"><b>$79/day</b></li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-3">
-                        <div class="carousel slide carousel-fade " data-bs-ride="carousel" id="carouselExampleFade2">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/front.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/back.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/internal.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car2/side.jpg">
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg5.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Alto K10</h3>
+                                        </div>
+                                        <hr>
+
+                                    </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" data-bs-slide="prev"
-                                    data-bs-target="#carouselExampleFade2"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" data-bs-slide="next"
-                                    data-bs-target="#carouselExampleFade2"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="col-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Mazda 3 (axela) - Crystal Lights </h5>
-                            <p class="card-text">Good Condition,Max seed 140,
-                                Rent Price for 30 days 870$.</p>
-                        </div>
-                    </td>
-                    <td class="col-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                        </ul>
-                    </td>
-                    <td class="col-2">
-                        <ul>
-                            <li class="list-group-item"><b>$29/day</b></li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-3">
-                        <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFade3">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/front.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/back.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/internal.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car3/side.jpg">
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg4.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Suzuki Celerio</h3>
+                                        </div>
+                                        <hr>
+
+                                    </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" data-bs-slide="prev"
-                                    data-bs-target="#carouselExampleFade3"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" data-bs-slide="next"
-                                    data-bs-target="#carouselExampleFade3"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </td>
-                    <td class="col-3">
-                        <div class="card-body">
-                            <h5 class="card-title">SUZUKI WAGON R FZ 2019</h5>
-                            <p class="card-text">Good Condition,Max speed 152,
-                                Rent Price for 30 days 1050$.</p>
-                        </div>
-                    </td>
-                    <td class="col-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
-                        </ul>
-                    </td>
-                    <td class="col-2">
-                        <ul>
-                            <li class="list-group-item"><b>$35/day</b></li>
-                        </ul>
-                    </td>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg6.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Perodua (Daihatsu) Axia</h3>
+                                        </div>
+                                        <hr>
 
-                </tr>
-                <tr>
-                    <td class="col-3">
-                        <div class=" carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFade4">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/front.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/back.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/internal.jpg">
-                                </div>
-                                <div class="carousel-item">
-                                    <img alt="..." class="d-block w-100 carImg" src="assets/images/car4/side.jpg">
+                                    </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" data-bs-slide="prev"
-                                    data-bs-target="#carouselExampleFade4"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" data-bs-slide="next"
-                                    data-bs-target="#carouselExampleFade4"
-                                    type="button">
-                                <span aria-hidden="true" class="carousel-control-next-icon"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg7.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Prius C/ Aqua</h3>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </td>
-                    <td>
-                        <div class="card-body">
-                            <h5 class="card-title">TOYOTA Voxy TRD </h5>
-                            <p class="card-text">Good Condition,Max speed 180.
-                                Rent Price for 30 days 1650$.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <h2 class="car-title"><span class="car-title-text" style="color: #0e344e">Premium Cars</span> </h2>
+            <hr>
+            <br>
+            <div class="Slider-Container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel2">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg8.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Corolla Axio/ NZE141</h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg9.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Perodua Bezza Prime Sedan</h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg11.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Allion NZT 260</h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 car-box">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg12.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Axio NKR 165</h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </td>
-                    <td>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">No of Passengers : <b>5 seats</b></li>
-                            <li class="list-group-item">Transmission Type : <b>Automatic</b></li>
-                            <li class="list-group-item">Fuel Type : <b> Petrol</b></li>
 
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li class="list-group-item"><b>$55/day</b></li>
-                        </ul>
-                    </td>
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
+            <br>
+            <br>
 
-                </tr>
-                </tbody>
-            </table>
+            <h2 class="car-title"><span class="car-title-text" style="color: #0e344e"> Luxury Cars</span></h2>
+            <hr>
+            <br>
+
+            <div class="row">
+                <div class="container">
+                    <div class="carousel slide multi-item-carousel" id="theCarousel3">
+                        <div class="carousel-inner row w-100 mx-auto">
+                            <div class="col-md-4">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg16.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Toyota Premio</h3>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg15.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>Mercedes</h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="wsk-cp-product">
+                                    <div class="wsk-cp-img">
+                                        <img src="assets/image/carimg14.jpg" alt="Product" class="img-responsive" width="240px" height="330px"/>
+                                    </div>
+                                    <div class="wsk-cp-text">
+                                        <div class="title-product">
+                                            <h3>BMW i8 </h3>
+                                        </div>
+                                        <hr>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+            <br>
         </div>
     </div>
 </section>
 
-<!-------------------------Booking Req--------------------------------------------------------->
-<section id="dashUser" class="container-fluid bg-white">
-    <div>
-        <h1>Booking Request</h1>
-    </div>
-    <div class="row p-3">
-        <h3 class="h3  p-2 bg-warning text-black">Car and Driver Details</h3>
-        <div class="col-2">
-            <label for="cmbType" class="form-label mb-0">Car Type</label>
-            <select class="form-select" aria-label="Default select example" id="cmbType"
-                    name="type">
-                <option selected>- Select Car Type -</option>
-                <option value="1">General</option>
-                <option value="2">Premium</option>
-                <option value="3">Luxury</option>
-            </select>
+<footer class="container py-5 ft">
+    <div class="row">
+        <div class="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+            <small class="d-block mb-3 text-muted">© 2017-2018</small>
         </div>
-        <div class="col-2">
-            <label for="cmbRegistrationNo" class="form-label mb-0">Car Registration No</label>
-            <select class="form-select" aria-label="Default select example" id="cmbRegistrationNo"
-                    name="type">
-            </select>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarBrand" class="form-label mb-0">Brand</label>
-                <input type="text" class="form-control" id="txtCarBrand" name="carBrand" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarColor" class="form-label mb-0">Color</label>
-                <input type="text" class="form-control" id="txtCarColor" name="carColor" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarFuel" class="form-label mb-0">Fuel Type</label>
-                <input type="text" class="form-control" id="txtCarFuel" name="carFuel" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarTransmission" class="form-label mb-0">Transmission</label>
-                <input type="text" class="form-control" id="txtCarTransmission" name="carTransmission" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarNoOfPassengers" class="form-label mb-0">No Of Passengers</label>
-                <input type="text" class="form-control" id="txtCarNoOfPassengers" name="carNoOfPassengers" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarDailyRate" class="form-label mb-0">Daily Rate (Rs.)</label>
-                <input type="text" class="form-control" id="txtCarDailyRate" name="carDailyRate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarMonthlyRate" class="form-label mb-0">Monthly Rate (Rs.)</label>
-                <input type="text" class="form-control" id="txtCarMonthlyRate" name="carMonthlyRate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarFreeKmForPrice" class="form-label mb-0">Free Km For Price (Km)</label>
-                <input type="text" class="form-control" id="txtCarFreeKmForPrice" name="carFreeKmForPrice" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarFreeKmForDuration" class="form-label mb-0">Free Km For Duration (Km)</label>
-                <input type="text" class="form-control" id="txtCarFreeKmForDuration" name="carFreeKmForDuration" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarLossDamageWavier" class="form-label mb-0">Loss Damage Wavier (Rs.)</label>
-                <input type="text" class="form-control" id="txtCarLossDamageWavier" name="carLossDamageWavier" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarPriceForExtraKm" class="form-label mb-0">Price For Extra Km (Rs.)</label>
-                <input type="text" class="form-control" id="txtCarPriceForExtraKm" name="carPriceForExtraKm" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarCompleteKm" class="form-label mb-0">Complete Km</label>
-                <input type="text" class="form-control" id="txtCarCompleteKm" name="carCompleteKm" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <label class="form-label mb-0">Car Front View</label>
-            <div class="mb-3" id="divCarFrontView" style="height: 13vh; border: #fd0015 2px solid">
 
-            </div>
-        </div>
-        <div class="col-2">
-            <label class="form-label mb-0">Car Back View</label>
-            <div class="mb-3" id="divCarBackView" style="height: 13vh; border: #fd0015 2px solid">
-
-            </div>
-        </div>
-        <div class="col-2">
-            <label class="form-label mb-0">Car Side View</label>
-            <div class="mb-3" id="divCarSideView" style="height: 13vh; border: #fd0015 2px solid">
-
-            </div>
-        </div>
-        <div class="col-2">
-            <label class="form-label mb-0">Car Interior View</label>
-            <div class="mb-3" id="divCarInteriorView" style="height: 13vh; border: #fd0015 2px solid">
-            </div>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button type="button" class="btn btn-danger mt-3 " id="nextbook">Next</button>
-        </div>
     </div>
+</footer>
 
+<!-- scripts -->
 
-</section>
+<script src="assets/js/HomePage.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<!-- Jquery needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
 
-<!-------------------------Booking Req part 02----------------------------------------------------->
-<section class="container-fluid" id="bookingRes2">
-    <div class="row p-3">
-        <h3 class="h3  p-2 bg-warning text-black">Rental Details</h3>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarRentId" class="form-label mb-0">Rent ID</label>
-                <input type="text" class="form-control" id="txtCarRentId" name="carRentId" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarTodayDate" class="form-label mb-0">Today</label>
-                <input type="text" class="form-control" id="txtCarTodayDate" name="carTodayDate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarPickupDate" class="form-label mb-0">Pickup Date</label>
-                <input type="date" class="form-control" id="txtCarPickupDate" name="carPickupDate">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCarReturnDate" class="form-label mb-0">Return Date</label>
-                <input type="date" class="form-control" id="txtCarReturnDate" name="carReturnDate">
-            </div>
-        </div>
-        <div class="col-3 d-flex align-items-center justify-content-center">
-            <label class="form-check-label pr-5" for="needDriver">Need a driver? </label>
-            <input class="form-check-input" type="checkbox" value="yes" id="needDriver">
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDriverLicenceNo" class="form-label mb-0">Driver Licence No</label>
-                <input type="text" class="form-control" id="txtDriverLicenceNo" name="driverLicenceNo" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDriverName" class="form-label mb-0">Driver Name</label>
-                <input type="text" class="form-control" id="txtDriverName" name="driverName" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDriverAddress" class="form-label mb-0">Driver Address</label>
-                <input type="text" class="form-control" id="txtDriverAddress" name="driverAddress" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDriverContactNo" class="form-label mb-0">Driver Contact No</label>
-                <input type="text" class="form-control" id="txtDriverContactNo" name="driverContactNo" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDriverNIC" class="form-label mb-0">Driver NIC</label>
-                <input type="text" class="form-control" id="txtDriverNIC" name="driverNIC" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <h3 class="h3  p-2 bg-warning text-black">Payment Details</h3>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtPaymentId" class="form-label mb-0">Payment ID</label>
-                <input type="text" class="form-control" id="txtPaymentId" name="paymentId" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtPaymentAmount" class="form-label mb-0">Amount (Rs.)</label>
-                <input type="text" class="form-control" id="txtPaymentAmount" name="paymentAmount">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row m-3">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button type="button" class="btn btn-primary mt-3 " id="sendRequest">Send Request</button>
-            <button type="button" class="btn btn-warning mt-3 " id="btnCancleRental">Cancal</button>
-            <button type="button" class="btn btn-danger mt-3 " id="btnPreview"><< Preview</button>
-        </div>
-    </div>
-</section>
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
 
-<!-------------------------Booking Responses----------------------------------------------------->
-<section id="bookingRes" class="container-fluid bg-white">
-    <div class="row text-center"><h1 class="h1 display-5">Booking Responses</h1></div>
-    <table class="table table-hover table-bordered table-striped" id="bookingResponsesTbl">
-        <thead class="bg-warning" style="color: black">
-        <tr>
-            <th>Rent ID</th>
-            <th>Date</th>
-            <th>Pickup Date</th>
-            <th>Return Date</th>
-            <th>Registration No</th>
-            <th>Customer ID</th>
-            <th>Licence No</th>
-            <th>Status</th>
-        </tr>
-        </thead>
-        <tbody id="bookingResponsesTable">
-
-        </tbody>
-    </table>
-    <hr>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtRentId" class="form-label mb-0">Rent ID</label>
-                <input type="text" class="form-control" id="txtRentId" name="rentId" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDate" class="form-label mb-0">Date</label>
-                <input type="text" class="form-control" id="txtDate" name="date" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtPickupDate" class="form-label mb-0">Pickup Date</label>
-                <input type="text" class="form-control" id="txtPickupDate" name="pickupDate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtReturnDate" class="form-label mb-0">Return Date</label>
-                <input type="text" class="form-control" id="txtReturnDate" name="returnDate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtRegistrationNo" class="form-label mb-0">Registration No</label>
-                <input type="text" class="form-control" id="txtRegistrationNo" name="registrationNo" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtLicenceNo" class="form-label mb-0">Licence No</label>
-                <input type="text" class="form-control" id="txtLicenceNo" name="licenceNo" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button type="button" class="btn  mt-3 " id="btnDeleteRental"><i class="fas fa-trash"></i> Delete Rental</button>
-            <button type="button" class="btn mt-3" id="btnClearRental" style="background-color: #8e9090; color: white">Clear</button>
-        </div>
-    </div>
-</section>
-
-<!-------------------------Payment user--------------------------------------------------------------->
-<section class="container-fluid bg-white" id="paymentUser">
-    <div class="row text-center"><h1 class="h1 display-5">Payments</h1></div>
-    <table class="table table-hover table-bordered table-striped" id="paymentsTbl1">
-        <thead class="bg-warning" style="color: black">
-        <tr>
-            <th>Payment ID</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Customer ID</th>
-            <th>Rent ID</th>
-        </tr>
-        </thead>
-        <tbody id="paymentsTable">
-        </tbody>
-    </table>
-    </div>
-
-</section>
-
-<!-------------------------Payment Details------------------------------------------------------------>
-<section class="container-fluid" id="paymentDetailsContent">
-    <div class="row text-center"><h1 class="h1 display-5">Payment Details</h1></div>
-    <div class="row m-3">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <div>
-                <label for="pickFromDate" class="form-label">From</label>
-                <input type="date" id="pickFromDate" class="form-control" name="fromDate"
-                       placeholder="Start Date">
-            </div>
-            <div>
-                <label for="pickFromDate" class="form-label">To</label>
-                <input type="date" id="pickToDate" class="form-control" name="toDate"
-                       placeholder="End Date">
-            </div>
-            <button type="button" class="btn btn-danger mt-3" id="btnSearchPayment" style=" height: 36px;position: relative;top: 17px;">Search</button>
-        </div>
-    </div>
-    <div class="bg-light" style="height: 65vh">
-        <table class="table table-hover table-bordered table-striped" id="paymentsTbl">
-            <thead style="background-color: black; color: white">
-            <tr>
-                <th>Payment ID</th>
-                <th>Date</th>
-                <th>Amount (Rs.)</th>
-                <th>Rent ID</th>
-                <th>Customer ID</th>
-            </tr>
-            </thead>
-            <tbody id="tblPayments">
-
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-------------------------maintences------------------------------------------------------------>
-<section class="container-fluid" id="mainteneceContent">
-    <div class="row text-center"><h1 class="h1 display-5">Maintenance</h1></div>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchRegistrationNo" class="form-label mb-0">Registration No</label>
-                <input type="text" class="form-control" id="txtSearchRegistrationNo"
-                       name="searchRegistrationNo">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchBrand" class="form-label mb-0">Brand</label>
-                <input type="text" class="form-control" id="txtSearchBrand"
-                       name="searchBrand" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchType" class="form-label mb-0">Type</label>
-                <input type="text" class="form-control" id="txtSearchType"
-                       name="searchType" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchTransmission" class="form-label mb-0">Transmission</label>
-                <input type="text" class="form-control" id="txtSearchTransmission"
-                       name="searchTransmission" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchColor" class="form-label mb-0">Color</label>
-                <input type="text" class="form-control" id="txtSearchColor"
-                       name="searchColor" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtSearchStatus" class="form-label mb-0">Status</label>
-                <input type="text" class="form-control" id="txtSearchStatus"
-                       name="searchStatus" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row d-flex align-items-center justify-content-end">
-        <div class="col-3 d-flex align-items-center justify-content-evenly">
-
-            <button type="button" class="btn" id="btnAddToMaintenance" style="background-color: green; color: white">Add To
-                Maintenance
-            </button>
-            <button type="button" class="btn" id="btnClearMaintenance" style="background-color: #4f4f50; color: white">Clear</button>
-        </div>
-    </div>
-    <hr>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtMaintenanceId" class="form-label mb-0">Maintenance ID</label>
-                <input type="text" class="form-control" id="txtMaintenanceId"
-                       name="maintenanceId">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="cmbRegistrationNo" class="form-label mb-0">Registration No</label>
-                <select class="form-select" aria-label="Default select example"
-                        id="cmbRegistrationNos"
-                        name="carRegNo">
-                </select>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtToday" class="form-label mb-0">Date</label>
-                <input type="text" class="form-control" id="txtToday"
-                       name="todayD">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtCost" class="form-label mb-0">Cost (Rs.)</label>
-                <input type="text" class="form-control" id="txtCost"
-                       name="maintenanceCost">
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="mb-3">
-                <label for="txtMaintenanceDetails" class="form-label mb-0">Details</label>
-                <input type="text" class="form-control" id="txtMaintenanceDetails"
-                       name="maintenanceDetails">
-            </div>
-        </div>
-        <div class="row d-flex align-items-center justify-content-end">
-            <div class="col-3 d-flex align-items-center justify-content-evenly">
-
-                <button type="button" class="btn" id="btnMaintenancePaid" style="background-color: blue; color: white">Paid</button>
-                <button type="button" class="btn" id="btnClearPaid" style="background-color: #4f4f50; color: white">Clear</button>
-            </div>
-        </div>
-        <div class="row ms-0 me-0">
-            <h3 class="h3  p-2 m-3 text-black" style="background-color: yellow">All Maintenances</h3>
-        </div>
-        <div class="bg-light" style="height: 38vh">
-            <table class="table table-hover table-bordered table-striped" id="allMaintenancesTbl">
-                <thead style="background-color: black; color: white">
-                <tr>
-                    <th>Maintenance ID</th>
-                    <th>Registration No</th>
-                    <th>Date</th>
-                    <th>Details</th>
-                    <th>Cost</th>
-                </tr>
-                </thead>
-                <tbody id="tblAllMaintenances">
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<!-------------------------request------------------------------------------------------------>
-<section class="container-fluid" id="reqContent">
-    <div class="row text-center"><h1 class="h1 display-5">Rental Requests</h1></div>
-    <div class="row ms-0 me-0">
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtRentId" class="form-label mb-0">Rent ID</label>
-                <input type="text" class="form-control" id="txtRentId1"
-                       name="rentId" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtDate" class="form-label mb-0">Date</label>
-                <input type="text" class="form-control" id="txtDate1"
-                       name="date" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtPickupDate" class="form-label mb-0">Pickup Date</label>
-                <input type="text" class="form-control" id="txtPickupDate1"
-                       name="pickupDate" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtReturnDate" class="form-label mb-0">Return Date</label>
-                <input type="text" class="form-control" id="txtReturnDate1"
-                       name="returnDate" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtCarRegistrationNo" class="form-label mb-0">Car Registration
-                    No</label>
-                <input type="text" class="form-control" id="txtCarRegistrationNo"
-                       name="regNo" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtCusId" class="form-label mb-0">Customer ID</label>
-                <input type="text" class="form-control" id="txtCusId"
-                       name="cusId" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtDLicenceNo" class="form-label mb-0">Driver Licence No</label>
-                <input type="text" class="form-control" id="txtDLicenceNo"
-                       name="dLicenceNo" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtRentalStatus" class="form-label mb-0">Status</label>
-                <input type="text" class="form-control" id="txtRentalStatus"
-                       name="rentalStatus" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-            <button type="button" class="btn mt-3 " id="btnRentalAccept" style="background-color: blue; color: white">Accept</button>
-            <button type="button" class="btn mt-3" id="btnRentalReject" style="background-color: red; color: white">Reject</button>
-            <button type="button" class="btn mt-3" id="btnClearRental1" style="background-color: yellow; color: black">Clear</button>
-        </div>
-    </div>
-    <div class="row ml-0 mr-0 mt- mb-2 align-content-end ">
-        <div class="input-group d-flex align-items-center justify-content-start">
-            <div class="col-3">
-                <input type="text" id="searchRentalRequest" class="form-control"
-                       placeholder="Search"/>
-            </div>
-            <button type="button" class="btn btn-danger" id="btnSearchRentalRequest">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </div>
-    <div class="bg-light " style="height: 45vh">
-        <table class="table table-hover table-bordered table-striped" id="carRentalRequestTbl">
-            <thead style="background-color: black; color: white">
-            <tr>
-                <th>Rent ID</th>
-                <th>Date</th>
-                <th>Pickup Date</th>
-                <th>Return Date</th>
-                <th>Car Registration No</th>
-                <th>Customer ID</th>
-                <th>Driver Licence No</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody id="tblCarRentalRequests">
-
-            </tbody>
-        </table>
-    </div>
-
-</section>
-
-<!-------------------------responses------------------------------------------------------------>
-<section class="container-fluid" id="responsesContent">
-    <div class="row text-center"><h1 class="h1 display-5">Rental Returns</h1></div>
-    <hr>
-    <div class="row ml-0 mr-0 mt-2 mb-2 align-content-end ">
-        <div class="input-group d-flex align-items-center justify-content-center">
-            <div class="col-2">
-                <input type="text" class="form-control" id="txtReturnId" name="returnId">
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtReturnPaymentId" class="form-label mb-0">Payment ID</label>
-                <input type="text" class="form-control" id="txtReturnPaymentId"
-                       name="rentalPaymentId" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtSearchRentId" class="form-label mb-0">Rent ID</label>
-                <input type="text" class="form-control" id="txtSearchRentId"
-                       name="searchRentId">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtTotalPaidAmount" class="form-label mb-0">Total Paid Amount
-                    (Rs.)</label>
-                <input type="text" class="form-control" id="txtTotalPaidAmount"
-                       name="totalPaidAmount" disabled>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="txtTodayDate" class="form-label mb-0">Today</label>
-                <input type="text" class="form-control" id="txtTodayDate"
-                       name="todayDate" disabled>
-            </div>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtPickDate" class="form-label mb-0">Pickup Date</label>
-                <input type="text" class="form-control" id="txtPickDate"
-                       name="pickDate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtRDate" class="form-label mb-0">Return Date</label>
-                <input type="text" class="form-control" id="txtRDate"
-                       name="rDate" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtRentForUseDates" class="form-label mb-0">Rent For Using Dates</label>
-                <input type="text" class="form-control" id="txtRentForUseDates"
-                       name="rentForUseDates" disabled>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtDamageCost" class="form-label mb-0">Damage Cost (Rs.)</label>
-                <input type="text" class="form-control" id="txtDamageCost"
-                       name="damageCost">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtTotalKm" class="form-label mb-0">Total Km</label>
-                <input type="text" class="form-control" id="txtTotalKm"
-                       name="totalKm">
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="mb-3">
-                <label for="txtTotalPriceForExtraKm" class="form-label mb-0">Total Price For Extra
-                    Km</label>
-                <input type="text" class="form-control" id="txtTotalPriceForExtraKm"
-                       name="totalPriceForExtraKm">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row ms-0 me-0">
-        <div class="col-3">
-            <div class="form-floating mb-3">
-                <button type="button" class="btn mt-3 " id="btnCalPayment" style="background-color: red; color: white">Calculate
-                    Payment
-                </button>
-
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="mb-3">
-                <label for="txtTotalPayments" class="form-label mb-0">Total Payments (Rs.)</label>
-                <input type="text" class="form-control" id="txtTotalPayments"
-                       name="totalPayments">
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="mb-3">
-                <label for="txtBalance" class="form-label mb-0">Balance (Rs.)</label>
-                <input type="text" class="form-control" id="txtBalance"
-                       name="balance">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row d-flex align-items-center justify-content-end">
-        <div class="col-3">
-            <button type="button" class="btn" id="btnSubmitPayment" style="background-color: blue; color: white">Submit Payment
-            </button>
-            <button type="button" class="btn" id="btnClearPayment" style="background-color: #454547; color: white">Clear</button>
-        </div>
-    </div>
-    <hr>
-    <div class="bg-light" style="height: 28vh">
-        <table class="table table-hover table-bordered table-striped" id="carRentaltbl">
-            <thead style="background-color: black; color: white">
-            <tr>
-                <th>Rent ID</th>
-                <th>Date</th>
-                <th>Pickup Date</th>
-                <th>Return Date</th>
-                <th>Car Registration No</th>
-                <th>Customer ID</th>
-                <th>Driver Licence No</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody id="tableCarRental">
-
-            </tbody>
-        </table>
-    </div>
-</section>
-
-
-<!-------------------------Income Reports------------------------------------------------------------>
-<section class="container-fluid" id="incomeReportContent">
-    <div class="row text-center"><h1 class="h1 display-5">Income Reports</h1></div>
-    <div class="row m-3">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <div>
-                <label for="incomeFromDate" class="form-label">From</label>
-                <input type="date" id="incomeFromDate" class="form-control" name="incomeFromDate"
-                       placeholder="Start Date">
-            </div>
-            <div>
-                <label for="incomeToDate" class="form-label">To</label>
-                <input type="date" id="incomeToDate" class="form-control" name="incomeToDate"
-                       placeholder="End Date">
-            </div>
-            <button type="button" class="btn btn-primary mt-3" id="btnSearchIncome" style="position: relative;height: 35px;top: 18px;">Search</button>
-        </div>
-    </div>
-    <div class="row ms-0 me-0">
-        <h3 class="h3  p-2 m-3 text-dark text-center">Payments</h3>
-    </div>
-    <div class="bg-light" style="height: 20vh">
-        <table class="table table-hover table-bordered table-striped" id="paymentsInDateRangeTbl">
-            <thead class="bg-dark text-white">
-            <tr>
-                <th>Payment ID</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Rent ID</th>
-                <th>Customer ID</th>
-            </tr>
-            </thead>
-            <tbody id="tblPaymentsInDateRange">
-
-            </tbody>
-        </table>
-    </div>
-    <div class="row ms-0 me-0">
-        <h3 class="h3  p-2 m-3 text-dark text-center">Maintenances</h3>
-    </div>
-    <div class="bg-light" style="height: 20vh">
-        <table class="table table-hover table-bordered table-striped" id="maintenancesInDateRangeTbl">
-            <thead class="bg-dark text-white">
-            <tr>
-                <th>Maintenance ID</th>
-                <th>Date</th>
-                <th>Cost</th>
-                <th>Details</th>
-                <th>Registration No</th>
-            </tr>
-            </thead>
-            <tbody id="tblMaintenancesInDateRange">
-
-            </tbody>
-        </table>
-    </div>
-    <div class="row ms-0 me-0">
-        <div class="col-6">
-            <label class="h4" style="color: black;position:relative; top: 28px; left: 53%">Total Income = </label>
-            <label class="h4" style="color: black;position:relative; top: 28px; left: 54%">Rs. </label>
-            <label class="h4 text-danger" id="lblTotalIncome"></label>
-        </div>
-    </div>
-</section>
-
-
-<!-------------------------Driver Dash------------------------------------------------------------>
-<section class="container-fluid" id="driverDashContent">
-
-</section>
-
-<script src="assets/boostrap/js/bootstrap.bundle.js"></script>
-<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
-    $("#dashBoardContent").css("display", "block");
-    $("#loginForm").css("display", "none");
-    $("#adminDash").css("display", "none");
-    $("#serviceContent").css("display", "none");
-    $("#signUp").css("display", "none");
-    $("#manageCar").css("display", "none");
-    $("#ManageTableCar").css("display", "none");
-    $("#manageUser").css("display", "none");
-    $("#manageDriver").css("display", "none");
-    $("#carContent").css("display", "none");
-    $("#carRentalContent").css("display", "none");
-    $("#dashUser").css("display", "none");
-    $("#bookingRes").css("display", "none");
-    $("#paymentUser").css("display", "none");
-    $("#paymentDetailsContent").css("display", "none");
-    $("#mainteneceContent").css("display", "none");
-    $("#reqContent").css("display", "none");
-    $("#responsesContent").css("display", "none");
-    $("#incomeReportContent").css("display", "none");
-    $("#driverDashContent").css("display", "none");
-    $("#bookingRes2").css("display", "none");
-
-    $("#linkHome").click(function () {
-        $("#dashBoardContent").css("display", "block");
-        $("#carContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
     });
-    $("#linkSignUp").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "block");
-        $("#adminDash").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-
-    $("#linkHomeAdmin").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-
-
-    $("#linkLogin").click(function () {
-        $("#rentCarBtnDashBoard").css("display", "none");
-        $("#loginForm").css("display", "block");
-    });$("#loginCloseBtn").click(function () {
-        $("#rentCarBtnDashBoard").css("display", "block");
-        $("#loginForm").css("display", "none");
-    });
-
-    $("#linkServices").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "block");
-        $("#manageCar").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkCarManage").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#ManageTableCar").css("display", "block");
-        $("#adminDash").css("display", "block");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#manageCarDetails").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "block");
-        $("#ManageTableCar").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#LinkBackToTable").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "block");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkCustomer").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "block");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkDriver").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "block");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkCarDetails").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "block");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkBookingReq").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#carRentalContent").css("display", "block");
-        $("#dashUser").css("display", "block");
-        $("#bookingRes").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkBookingRes").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "block");
-        $("#carRentalContent").css("display", "block");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkPaymentCus").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "block");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "block");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkPayment").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "block");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkMaintenance").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "block");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkReq").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "block");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-
-    });
-    $("#linkRentalReturn").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "block");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-    });
-    $("#linkIncomeReports").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "block");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "none");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "block");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-    });
-    $("#nextbook").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "block");
-        $("#dashUser").css("display", "none");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "block");
-    });
-    $("#btnPreview").click(function () {
-        $("#dashBoardContent").css("display", "none");
-        $("#signUp").css("display", "none");
-        $("#serviceContent").css("display", "none");
-        $("#manageCar").css("display", "none");
-        $("#ManageTableCar").css("display", "none");
-        $("#adminDash").css("display", "none");
-        $("#manageUser").css("display", "none");
-        $("#manageDriver").css("display", "none");
-        $("#carContent").css("display", "none");
-        $("#bookingRes").css("display", "none");
-        $("#carRentalContent").css("display", "block");
-        $("#dashUser").css("display", "block");
-        $("#paymentUser").css("display", "none");
-        $("#paymentDetailsContent").css("display", "none");
-        $("#mainteneceContent").css("display", "none");
-        $("#reqContent").css("display", "none");
-        $("#responsesContent").css("display", "none");
-        $("#incomeReportContent").css("display", "none");
-        $("#driverDashContent").css("display", "none");
-        $("#bookingRes2").css("display", "none");
-    });
-
-
-
-    $("#loginBtn").click(function () {
-        if ($("#typeEmailX").val()==="admin" && $("#typePasswordX").val()==="1234") {
-            $("#dashBoardContent").css("display", "none");
-            $("#adminDash").css("display", "block");
-            $("#loginForm").css("display", "none");
-            $("#signUp").css("display", "none");
-        }else if($("#typeEmailX").val()==="user" && $("#typePasswordX").val()==="1234"){
-            $("#dashBoardContent").css("display", "none");
-            $("#adminDash").css("display", "none");
-            $("#loginForm").css("display", "none");
-            $("#signUp").css("display", "none");
-            $("#carRentalContent").css("display", "block");
-        }});
-    $("#addDriverBtn").click(function (){
-        addDriver();
-    });
-    $("#updateDriver").click(function (){
-        updateDriver();
-    });
-    $("#deleteDriver").click(function (){
-        deleteDriver();
-    });
-
-    $("#registerBtn").click(function (){
-        saveCustomer();
-    });
-
 </script>
 </body>
+
 </html>

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Car Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/scss/custom.css">
+    <link href="assets/bootsrap/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Ubuntu&display=swap" rel="stylesheet">
+
+
+    <style>
+
+
+        #tblCar{
+            position: relative;
+            top: 150px;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">Booking.com</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a id="cu" href="#customer_panel">Customer Details</a></li>
+                <li><a id="mc" href="#manageCar_panel">CarDetails</a></li>
+                <li><a id="rp" href="#reqRental_panel">Rental Details</a></li>
+                <li><a id="dp" href="#driver_panel">Driver Details</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="customer_panel">
+<div class="main-panel">
+    <h1>Customer Details</h1>
+    <div  class="content">
+        <div class="container-fluid">
+
+
+                                <div id="sn" class="form-floating mb-6">
+                                    <input class="form-control" id="searchNic"
+                                           placeholder="SearchNic" name="nic" type="text">
+                                    <label for="searchNic">Search NIC No</label>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="form-floating mb-6">
+                                    <button id="btnSearchNic" type="button">Search NIC</button>
+                                </div>
+
+                            <hr>
+
+                    <div class="row">
+
+                    <div class="col-md-6">
+                                <form class="car_form">
+                                    <div id="cn1" class="form-floating mb-3">
+                                        <input class="form-control" id="email"
+                                               placeholder="Email" name="email" type="text">
+                                        <label for="email">Email
+                                        </label>
+                                    </div>
+
+                                    <div id="cn2" class="form-floating mb-3">
+                                        <input class="form-control" id="password"
+                                               placeholder="Password" name="password" type="text">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <div id="cn3" class="form-floating mb-3">
+                                        <input class="form-control" id="nic"
+                                               placeholder="Nic" name="nic" type="text">
+                                        <label for="nic">NIC</label>
+                                    </div>
+                                    <label id="lblc">NIC Image - Can not be edition</label>
+                                    <div id="cn4" class="form-floating mb-3">
+                                        <input class="form-control reg-image" id="nicImage"
+                                               placeholder="Drivinglicense" name="nicImage" type="text">
+                                        <label for="nicImage">NIC Image</label>
+                                    </div>
+                                    <div id="cn5" class="form-floating mb-3">
+                                        <input class="form-control" id="dlicense"
+                                               placeholder="Drivinglicense" name="dlicense" type="text">
+                                        <label for="dlicense">Driving Licen</label>
+                                    </div>
+
+                                </div>
+                        <div class="col-md-6">
+                                    <label id="lbld">Driving Licen Image - Can not be edition </label>
+                                    <div id="cn6" class="form-floating mb-3">
+                                        <input class="form-control reg-image" id="dlicenseImage"
+                                               placeholder="Drivinglicense" name="dlicenseImage" type="text">
+                                        <label for="dlicenseImage">Driving Licen Image</label>
+                                    </div>
+                                    <div id="cn7" class="form-floating mb-3">
+                                        <input class="form-control" id="address"
+                                               placeholder="Address" name="address" type="text">
+                                        <label for="address">Address</label>
+                                    </div>
+                                    <div id="cn8" class="form-floating mb-3">
+                                        <input class="form-control" id="contactNo"
+                                               placeholder="ContactNo" name="contactNo" type="text">
+                                        <label for="contactNo">Contact</label>
+                                    </div>
+                                    <div id="cn9" class="form-floating mb-3">
+                                        <input class="form-control" id="customerStatus"
+                                               placeholder="CustomerStatus" name="cusStatus" type="text">
+                                        <label for="customerStatus">Status</label>
+                                    </div>
+                        </div>
+
+                                    <button id="btnUpdateUser" class="btn btn-warning" type="button">Update</button>
+
+                                </form>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                <div class="col-md-6">
+                    <div>
+                        <button id="btnGetAllUsers" class="btn btn-primary" type="button">View Customers</button>
+                    </div>
+                    <table id="tblMain_Cus" class="table table-head-bg-success table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Nic Number</th>
+                            <th scope="col">Nic Number Image</th>
+                            <th scope="col">Driving Licens</th>
+                            <th scope="col">Driving Licen Image</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblUser"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<section id="manageCar_panel">
+    <h1>Car Details</h1>
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                                <form id="car_formId">
+                                    <div id="ca1" class="form-floating mb-3">
+                                        <input class="form-control" id="carNumber"
+                                               placeholder="CarNumber" name="carNumber" type="text">
+                                        <label for="carNumber">Car Number
+                                        </label>
+                                    </div>
+
+                                    <div id="ca2" class="form-floating mb-3">
+                                        <input class="form-control" id="brand"
+                                               placeholder="Brand" name="brand" type="text">
+                                        <label for="brand">Brand</label>
+                                    </div>
+                                    <div id="ca3" class="form-floating mb-3">
+                                        <input class="form-control" id="type"
+                                               placeholder="Type" name="type" type="text">
+                                        <label for="type">Type</label>
+                                    </div>
+                                    <div id="ca4" class="form-floating mb-3">
+                                        <input class="form-control" id="passengers"
+                                               placeholder="Passengers" name="passengers" type="text">
+                                        <label for="passengers">Passengers</label>
+                                    </div>
+
+                                    <div id="ca5" class="form-floating mb-3">
+                                        <input class="form-control" id="transmission"
+                                               placeholder="Transmission" name="transmission" type="text">
+                                        <label for="transmission"> Transmission type</label>
+                                    </div>
+                                    <div id="ca6" class="form-floating mb-3">
+                                        <input class="form-control" id="fuel"
+                                               placeholder="Fuel" name="fuel" type="text">
+                                        <label for="fuel"> Fuel Type</label>
+                                    </div>
+                                    <div id="ca7" class="form-floating mb-3">
+                                        <input class="form-control" id="dailyRate"
+                                               placeholder="DailyRate" name="dailyRate" type="text">
+                                        <label for="dailyRate">Daily Rate (Rs)</label>
+                                    </div>
+                                    <div id="ca8" class="form-floating mb-3">
+                                        <input class="form-control" id="monthlyRate"
+                                               placeholder="MonthlyRate" name="monthlyRate" type="text">
+                                        <label for="monthlyRate">Monthly Rate (Rs)</label>
+                                    </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+                                    <div id="ca9" class="form-floating mb-3">
+                                        <input class="form-control" id="freeKmForDay"
+                                               placeholder="FreeKmForDay" name="freeKmForDay" type="text">
+                                        <label for="freeKmForDay"> Free km for a day</label>
+                                    </div>
+                                    <div id="ca10" class="form-floating mb-3">
+                                        <input class="form-control" id="freeKmForMonth"
+                                               placeholder="FreeKmForMonth" name="freeKmForMonth" type="text">
+                                        <label for="freeKmForMonth"> Free km for a month</label>
+                                    </div>
+                                    <div id="ca11" class="form-floating mb-3">
+                                        <input class="form-control" id="pricePerExtraKm"
+                                               placeholder="PricePerExtraKm" name="pricePerExtraKm" type="text">
+                                        <label for="pricePerExtraKm">Price per extra KM (Rs)</label>
+                                    </div>
+                                    <div id="ca12" class="form-floating mb-3">
+                                        <input class="form-control" id="regNumber"
+                                               placeholder="RegNumber" name="regNumber" type="text">
+                                        <label for="regNumber">Registration number
+                                        </label>
+                                    </div>
+                                    <div id="ca13" class="form-floating mb-3">
+                                        <input class="form-control" id="color"
+                                               placeholder="Color" name="color" type="text">
+                                        <label for="color">Color</label>
+                                    </div>
+<!--                                    <div id="ca14" class="form-floating mb-3">-->
+<!--                                        <input id="file" name="file" type="file" />-->
+<!--                                    </div>-->
+                                    <div id="ca15" class="form-floating mb-3">
+                                        <input class="form-control" id="carQuantity"
+                                               placeholder="CarQuantity" name="carQuantity" type="text">
+                                        <label for="carQuantity">Number of cars available</label>
+                                    </div>
+                    </div>
+                    </form>
+                                    <br>
+                                    <br>
+                                    <button id="btnAddCar"  type="button">Add</button>
+                                    <button id="btnUpdateCar"  type="button">Update</button>
+                    <button id="btnDeleteCar"  type="button">Delete</button>
+                                    <button id="btnGetAllCar" type="button">View Cars</button>
+                                    <button id="btnClearCar" type="button">Clear</button>
+
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md">
+                                <table id="tblMain_Car" class="table table-head-bg-success table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Car No</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">passengers</th>
+                                        <th scope="col">Transmission</th>
+                                        <th scope="col">Fuel</th>
+                                        <th scope="col">Daily Rate</th>
+                                        <th scope="col">Monthly Rate</th>
+                                        <th scope="col">Free km for a day</th>
+                                        <th scope="col">Free km for a month</th>
+                                        <th scope="col">Price per extra KM</th>
+                                        <th scope="col">Registration number</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Number of cars available</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tblCar"></tbody>
+                                </table>
+                            </div>
+                        </div>
+        </div>
+    </div>
+
+</section>
+
+<!--/////////////////////////////////////////////////Driver Panel////////////////////////////////////////////////////-->
+<section id="driver_panel">
+    <div  class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                                <form id="driverform">
+                                    <div id="din1" class="form-floating mb-3">
+                                        <input class="form-control" id="did"
+                                               placeholder="Did" name="driverId" type="text">
+                                        <label for="did">Driver Id
+                                        </label>
+                                    </div>
+
+                                    <div id="din2" class="form-floating mb-3">
+                                        <input class="form-control" id="d_name"
+                                               placeholder="Name" name="name" type="text">
+                                        <label for="d_name">Driver Name</label>
+                                    </div>
+                                    <div id="din3" class="form-floating mb-3">
+                                        <input class="form-control" id="d_email"
+                                               placeholder="d_email" name="email" type="text">
+                                        <label for="d_email">Email</label>
+                                    </div>
+                                    <div id="din4" class="form-floating mb-3">
+                                        <input class="form-control" id="d_password"
+                                               placeholder="Password" name="password" type="text">
+                                        <label for="d_password">Password</label>
+                                    </div>
+
+                                    <div id="din5" class="form-floating mb-3">
+                                        <input class="form-control" id="driver_nic"
+                                               placeholder="Driver_Nic" name="nic" type="text">
+                                        <label for="driver_nic"> Driver Nic</label>
+                                    </div>
+
+                                    </div>
+
+
+                    <div class="col-md-6">
+                                    <div id="din6" class="form-floating mb-3">
+                                        <input class="form-control" id="driver_license"
+                                               placeholder="Driver_license" name="drivingLicenseNo" type="text">
+                                        <label for="driver_license">Driver License</label>
+                                    </div>
+                                    <div id="din7" class="form-floating mb-3">
+                                        <input class="form-control" id="d_address"
+                                               placeholder="Address" name="address" type="text">
+                                        <label for="d_address">Address</label>
+                                    </div>
+                                    <div id="din8" class="form-floating mb-3">
+                                        <input class="form-control" id="d_contactNo"
+                                               placeholder="contactNo" name="contact" type="text">
+                                        <label for="d_contactNo">Contact No</label>
+                                    </div>
+                                    <div id="din9" class="form-floating mb-3">
+                                        <input class="form-control" id="d_age"
+                                               placeholder="Age" name="age" type="text">
+                                        <label for="d_age">Age</label>
+                                    </div>
+                                    <div id="din10" class="form-floating mb-3">
+                                        <input class="form-control" id="d_gender"
+                                               placeholder="Gender" name="gender" type="text">
+                                        <label for="d_gender">Gender</label>
+                                    </div>
+
+                    </div>
+
+                                    <br>
+                                    <br>
+
+                                    <div>
+
+                                    <button id="btnAddDriver"  type="button">Add </button>
+                                    <button id="btnUpdateDriver"  type="button">Update</button>
+                                        <button id="btnDeleteDriver"  type="button">Delete</button>
+                                        <button id="btnGetAllDriver"  type="button">View All Drivers</button>
+                                    <button id="btnClearDriver"  type="button">Clear</button>
+                    </div>
+                    </form>
+
+                </div>
+                <div class="col-md">
+
+                        <div class="card-body">
+                                <table id="tblMain_Driver" class="table table-head-bg-success table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Did</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Driver Nic</th>
+                                        <th scope="col">Driver License</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">ContactNo</th>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Gender</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tblDriver"></tbody>
+                                </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</section>
+
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+
+<!--</script>-->
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/bootsrap/js/bootstrap.min.js"></script>
+<script >
+
+    $("#customer_panel").css("display", "block");
+    $("#manageCar_panel").css("display", "none");
+    $("#driver_panel").css("display", "none");
+
+    $("#mc").click(function () {
+        $("#manageCar_panel").css("display", "block");
+        $("#customer_panel").css("display", "none");
+        $("#driver_panel").css("display", "none");
+    });
+    $("#dp").click(function () {
+        $("#manageCar_panel").css("display", "none");
+        $("#customer_panel").css("display", "none");
+        $("#driver_panel").css("display", "block");
+    });
+
+    $("#cu").click(function () {
+        $("#manageCar_panel").css("display", "none");
+        $("#customer_panel").css("display", "block");
+        $("#driver_panel").css("display", "none");
+    });
+
+
+    function checkvalidationDriver() {
+
+        let dr_id = $("#did").val();
+        let dr_name = $("#d_name").val();
+        let dr_email = $("#d_email").val();
+        let dr_password = $("#d_password").val();
+        let dr_driver_nic = $("#driver_nic").val();
+        let dr_driver_license = $("#driver_license").val();
+        let dr_address = $("#d_address").val();
+        let dr_contactNo = $("#d_contactNo").val();
+        let dr_age = $("#d_age").val();
+        let dr_gender = $("#d_gender").val();
+
+        if (dr_id!=""){
+            if (dr_name!=""){
+                if(dr_email!=""){
+                    if (dr_password!=""){
+                        if (dr_driver_nic!=""){
+                            if (dr_driver_license!=""){
+                                if (dr_address!=""){
+                                    if (dr_contactNo!=""){
+                                        if (dr_age!=""){
+                                            if (dr_gender){
+                                                return true;
+                                            }else{
+                                                alert("Please Add Gender");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Age");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Contact Number");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Address");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Driver License");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Driver NIC Number");
+                            return false;
+                        }
+                    }else {
+                        alert("Please Add Password");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Email");
+                    return false;
+                }
+            }else{
+                alert("Please Add Name");
+                return false;
+            }
+        }else{
+            alert("Please Add id");
+            return false;
+        }
+
+    }
+//////=================================================================================================================
+
+    $("#did").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchDriver();
+        }
+    });
+
+    //Get All Customers Event
+    $("#btnGetAllDriver").click(function () {
+        loadAllDrivers();
+    });
+
+    $("#btnAddDriver").click(function () {
+        saveDriver();
+    });
+
+    //Delete Customer Event
+    $("#btnDeleteDriver").click(function () {
+        deleteDriver();
+    });
+
+    //Update Customer Event
+    $("#btnUpdateDriver").click(function () {
+        updateDriver();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#tblMain_Driver>tr").click(function () {
+
+            let dr_id =$(this).children().eq(0).text();
+            let dr_name = $(this).children().eq(1).text();
+            let dr_email = $(this).children().eq(2).text();
+            let dr_password = $(this).children().eq(3).text();
+            let dr_driver_nic = $(this).children().eq(4).text();
+            let dr_driver_license = $(this).children().eq(5).text();
+            let dr_address =$(this).children().eq(6).text();
+            let dr_contactNo =$(this).children().eq(7).text();
+            let dr_age =$(this).children().eq(8).text();
+            let dr_gender =$(this).children().eq(9).text();
+
+            //Set values to the text-fields
+            $("#did").val(dr_id);
+            $("#d_name").val(dr_name);
+            $("#d_email").val(dr_email);
+            $("#d_password").val(dr_password);
+            $("#driver_nic").val(dr_driver_nic);
+            $("#driver_license").val(dr_driver_license);
+            $("#d_address").val(dr_address);
+            $("#d_contactNo").val(dr_contactNo);
+            $("#d_age").val(dr_age);
+            $("#d_gender").val(dr_gender);
+        });
+    }
+
+
+    // Methods
+    loadAllDrivers();
+
+    //Save Customer
+    function saveDriver() {
+            var data = $("#driverform").serialize(); // return query string of form with name:type-value
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/driver",
+                method: "POST",
+                data: data,// if we send data with the request
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Successfully Customer Registered");
+                        loadAllDrivers();
+                        clearForm();
+                    }
+                },
+                error: function (ob) {
+                    alert(ob.message);
+                }
+            });
+    }
+
+
+    function loadAllDrivers() {
+        $("#tblDriver").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.driverId}</td><td>${i.name}</td><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.drivingLicenseNo}</td><td>${i.address}</td><td>${i.contact}</td><td>${i.age}</td><td>${i.gender}</td></tr>`;
+                    $("#tblDriver").append(row);
+                }
+                bindClickEvents();
+                clearForm();
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateDriver() {
+        //creating a js object with relevant data which you wanna send to the server
+        var cusOb = {
+            driverId: $("#did").val(),
+            name:$("#d_name").val(),
+            address:$("#d_address").val(),
+            age:$("#d_age").val(),
+            contact:$("#d_contactNo").val(),
+            gender:$("#d_gender").val(),
+            nic:$("#driver_nic").val(),
+            drivingLicenseNo:$("#driver_license").val(),
+            email:$("#d_email").val(),
+            password: $("#d_password").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(cusOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteDriver() {
+        // Get the customer id
+        let driverId = $("#did").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver" + "?id=" + driverId,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Customer Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchDriver() {
+        var driverId = $("#did").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/driver" + "/" + driverId,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var driver = res.data;
+                    $("#did").val(driver.driverId);
+                    $("#d_name").val(driver.name);
+                    $("#d_email").val(driver.email);
+                    $("#d_password").val(driver.password);
+                    $("#driver_nic").val(driver.nic);
+                    $("#driver_license").val(driver.drivingLicenseNo);
+                    $("#d_address").val(driver.address);
+                    $("#d_contactNo").val(driver.contact);
+                    $("#d_age").val(driver.age);
+                    $("#d_gender").val(driver.gender);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#did").focus();
+        $("#d_name").val();
+        $("#d_email").val();
+        $("#d_password").val();
+        $("#driver_nic").val();
+        $("#driver_license").val();
+        $("#d_address").val();
+        $("#d_contactNo").val();
+        $("#d_age").val();
+        $("#d_gender").val();
+        $("#did").focus();
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Methods
+    //----------car input field validations----------------------
+
+    $("#carNumber").on("keypress", function (e) {
+        if (e.key == "Enter") {
+            searchCar();
+        }
+    });
+
+    //Get All Customers Event
+    $("#btnGetAllCar").click(function () {
+        loadAllCars();
+    });
+
+    $("#btnAddCar").click(function () {
+        saveCar();
+    });
+
+    //Delete Customer Event
+    $("#btnDeleteCar").click(function () {
+        deleteDriver();
+    });
+
+    //Update Customer Event
+    $("#btnUpdateCar").click(function () {
+        updateDriver();
+    });
+
+    //Bind click events to the table rows
+    function bindClickEvents() {
+        $("#tblMain_Car>tr").click(function () {
+
+            let cr_carNumber = $("#carNumber").eq(0).text();
+            let cr_brand = $("#brand").eq(1).text();
+            let cr_type = $("#type").eq(2).text();
+            let cr_passengers = $("#passengers").eq(3).text();
+            let cr_transmission = $("#transmission").eq(4).text();
+            let cr_fuel = $("#fuel").eq(5).text();
+            let cr_dailyRate = $("#dailyRate").eq(6).text();
+            let cr_monthlyRate = $("#monthlyRate").eq(7).text();
+            let cr_freeKmForDay = $("#freeKmForDay").eq(8).text();
+            let cr_freeKmForMonth = $("#freeKmForMonth").eq(9).text();
+            let cr_pricePerExtraKm = $("#pricePerExtraKm").eq(10).text();
+            let cr_regNumber = $("#regNumber").eq(11).text();
+            let cr_color = $("#color").eq(12).text();
+           // let cr_carImage = $("#file").eq(0).text();
+            let cr_quantity = $("#carQuantity").eq(13).text();
+
+            //Set values to the text-fields
+            $("#carNumber").val(cr_carNumber);
+            $("#brand").val(cr_brand);
+            $("#type").val(cr_type);
+            $("#passengers").val(cr_passengers);
+            $("#transmission").val(cr_transmission);
+            $("#fuel").val(cr_fuel);
+            $("#dailyRate").val(cr_dailyRate);
+            $("#monthlyRate").val(cr_monthlyRate);
+            $("#freeKmForDay").val(cr_freeKmForDay);
+            $("#pricePerExtraKm").val(cr_freeKmForMonth);
+            $("#regNumber").val(cr_regNumber);
+            $("#color").val(cr_color);
+            $("#carQuantity").val(cr_quantity);
+        });
+    }
+
+
+    // Methods
+    loadAllCars();
+
+    //Save Customer
+    function saveCar() {
+            var data = $("#car_formId").serialize(); // return query string of form with name:type-value
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/vehicle",
+                method: "POST",
+                data: data,// if we send data with the request
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Successfully Customer Registered");
+                         loadAllCars();
+                        // clearForm();
+                    }
+                },
+                error: function (ob) {
+                    alert(ob.message);
+                }
+            });
+    }
+    
+    function loadAllCars() {
+        $("#tblCar").empty();
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/vehicle",
+            method: "GET",
+            // dataType:"json", // please convert the response into JSON
+            success: function (resp) {
+
+                for (let i of resp.data) {
+                    var row = `<tr><td>${i.carNumber}</td><td>${i.brand}</td><td>${i.type}</td><td>${i.passengers}</td><td>${i.transmission}</td><td>${i.fuel}</td><td>${i.dailyRate}</td><td>${i.monthlyRate}</td><td>${i.freeKmForDay}</td><td>${i.freeKmForMonth}</td><td>${i.pricePerExtraKm}</td><td>${i.regNumber}</td><td>${i.color}</td><td>${i.carQuantity}</td></tr>`;
+                    $("#tblCar").append(row);
+                }
+                bindClickEvents();
+                //clearForm();
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Update Driver
+    function updateDriver() {
+        //creating a js object with relevant data which you wanna send to the server
+        var cusOb = {
+            driverId: $("#did").val(),
+            name:$("#d_name").val(),
+            address:$("#d_address").val(),
+            age:$("#d_age").val(),
+            contact:$("#d_contactNo").val(),
+            gender:$("#d_gender").val(),
+            nic:$("#driver_nic").val(),
+            drivingLicenseNo:$("#driver_license").val(),
+            email:$("#d_email").val(),
+            password: $("#d_password").val()
+        }
+
+        $.ajax({
+            url:"http://localhost:8080/BackEnd_war/api/v1/driver" ,
+            method: "PUT",
+            contentType: "application/json", //You should state request's content type using MIME types
+            data: JSON.stringify(cusOb), // format js object to valid json string
+            success: function (res) {
+                if (res.code == 200) { // process is  ok
+                    alert("Successfully Updated");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Delete Customer
+    function deleteDriver() {
+        // Get the customer id
+        let driverId = $("#did").val();
+
+        // initiate the request
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver" + "?id=" + driverId,// viya query string
+            method: "DELETE",
+            //data:data,// application/x-www-form-urlencoded
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("Customer Successfully Deleted");
+                    loadAllDrivers();
+                    clearForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Search Customer
+    function searchDriver() {
+        var driverId = $("#did").val();
+
+        $.ajax({
+            url:  "http://localhost:8080/BackEnd_war/api/v1/driver" + "/" + driverId,
+            method: "GET",
+            success: function (res) {
+                if (res.code = 200) {
+                    var driver = res.data;
+                    $("#did").val(driver.driverId);
+                    $("#d_name").val(driver.name);
+                    $("#d_email").val(driver.email);
+                    $("#d_password").val(driver.password);
+                    $("#driver_nic").val(driver.nic);
+                    $("#driver_license").val(driver.drivingLicenseNo);
+                    $("#d_address").val(driver.address);
+                    $("#d_contactNo").val(driver.contact);
+                    $("#d_age").val(driver.age);
+                    $("#d_gender").val(driver.gender);
+                } else {
+                    clearForm();
+                }
+            },
+            error:function (ob){
+                alert(ob.message);
+            }
+        });
+    }
+
+    //Clear Customer Input Fields
+    function clearForm() {
+        $("#did").focus();
+        $("#d_name").val();
+        $("#d_email").val();
+        $("#d_password").val();
+        $("#driver_nic").val();
+        $("#driver_license").val();
+        $("#d_address").val();
+        $("#d_contactNo").val();
+        $("#d_age").val();
+        $("#d_gender").val();
+        $("#did").focus();
+    }
+
+    function checkvalidationCar() {
+
+        let cr_carNumber = $("#carNumber").val();
+        let cr_brand = $("#brand").val();
+        let cr_type = $("#type").val();
+        let cr_passengers = $("#passengers").val();
+        let cr_transmission = $("#transmission").val();
+        let cr_fuel = $("#fuel").val();
+        let cr_dailyRate = $("#dailyRate").val();
+        let cr_monthlyRate = $("#monthlyRate").val();
+        let cr_freeKmForDay = $("#freeKmForDay").val();
+        let cr_freeKmForMonth = $("#freeKmForMonth").val();
+        let cr_pricePerExtraKm = $("#pricePerExtraKm").val();
+        let cr_regNumber = $("#regNumber").val();
+        let cr_color = $("#color").val();
+        let cr_carImage = $("#file").val();
+        let cr_quantity = $("#carQuantity").val();
+
+        if (cr_carNumber!=""){
+            if (cr_brand!=""){
+                if(cr_type!=""){
+                    if (cr_passengers!=""){
+                        if (cr_transmission!=""){
+                            if (cr_fuel!=""){
+                                if (cr_dailyRate!=""){
+                                    if (cr_monthlyRate!=""){
+                                        if (cr_freeKmForDay!=""){
+                                            if (cr_freeKmForMonth!=""){
+                                                if (cr_pricePerExtraKm!=""){
+                                                    if (cr_regNumber!=""){
+                                                        if (cr_color!=""){
+                                                            if (cr_carImage!=""){
+                                                                if (cr_quantity){
+                                                                    return true;
+                                                                }else{
+                                                                    alert("Please Add Available Cars ");
+                                                                    return false;
+                                                                }
+                                                            }else{
+                                                                alert("Please Add Car Image");
+                                                                return false;
+                                                            }
+                                                        }else{
+                                                            alert("Please Add Color");
+                                                            return false;
+                                                        }
+                                                    }else{
+                                                        alert("Please Add Registration Number");
+                                                        return false;
+                                                    }
+                                                }else{
+                                                    alert("Please Add Price Per Extra Km");
+                                                    return false;
+                                                }
+
+                                            }else{
+                                                alert("Please Add Free Km For Month");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Free Km For Day");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Monthly Rate");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Daily Rate");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Fuel Type");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Transmission");
+                            return false;
+                        }
+                    }else{
+                        alert("Please Add Passengers");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Type");
+                    return false;
+                }
+            }else {
+                alert("Please Add Brand");
+                return false;
+            }
+        }else{
+            alert("Please Add Car Number");
+            return false;
+        }
+    }
+
+    //---------driver validation-------------------------
+
+    function checkvalidationDriver() {
+
+        let dr_id = $("#did").val();
+        let dr_name = $("#d_name").val();
+        let dr_email = $("#d_email").val();
+        let dr_password = $("#d_password").val();
+        let dr_driver_nic = $("#driver_nic").val();
+        let dr_driver_license = $("#driver_license").val();
+        let dr_address = $("#d_address").val();
+        let dr_contactNo = $("#d_contactNo").val();
+        let dr_age = $("#d_age").val();
+        let dr_gender = $("#d_gender").val();
+
+        if (dr_id!=""){
+            if (dr_name!=""){
+                if(dr_email!=""){
+                    if (dr_password!=""){
+                        if (dr_driver_nic!=""){
+                            if (dr_driver_license!=""){
+                                if (dr_address!=""){
+                                    if (dr_contactNo!=""){
+                                        if (dr_age!=""){
+                                            if (dr_gender){
+                                                return true;
+                                            }else{
+                                                alert("Please Add Gender");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Age");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Contact Number");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Address");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Driver License");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Driver NIC Number");
+                            return false;
+                        }
+                    }else {
+                        alert("Please Add Password");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Email");
+                    return false;
+                }
+            }else{
+                alert("Please Add Name");
+                return false;
+            }
+        }else{
+            alert("Please Add id");
+            return false;
+        }
+
+    }
+
+    // //----customer count-------
+    //
+    // $.ajax({
+    //     type: "GET",
+    //     url:"http://localhost:8080/BackEnd_war/api/v1/registration",
+    //     success:function (response) {
+    //         $("#customerCount").text(response.data.length);
+    //     },
+    // });
+    //
+    // //----request count-------
+    //
+    // $.ajax({
+    //     type: "GET",
+    //     url:"http://localhost:8080/BackEnd_war/api/v1/booking",
+    //     success:function (response) {
+    //         $("#requestCount").text(response.data.length);
+    //     },
+    // });
+
+
+</script>
+
+</body>
+</html>

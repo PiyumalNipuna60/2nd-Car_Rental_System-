@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental | Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/BookingStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Ubuntu&display=swap"
+          rel="stylesheet">
+
+</head>
+<body>
+<div class="col-md-6 card-form__inner cd">
+    <h1>Submit You'r Request</h1>
+
+    <div >
+        <form>
+            <label>Request Id</label>
+            <output class="cu-out" id="requestId" name="requestNumber"></output>
+            <br>
+            <label for="searchNic">Search NIC No</label>
+            <input class="form-control" id="searchNic"
+                   placeholder="SearchNic" name="nic" type="text">
+            <span class="control-error"></span>
+            <div class="form-floating mb-6">
+                <button id="btnSearchNic" type="button">Search</button>
+
+            </div>
+            <div  class="label">Email : <output class="cu-out" id="email" name="email"></output></div>
+<!--            <div  class="label">Password : <output class="cu-out" id="password" name="password"></output></div>-->
+            <div  class="label">Nic : <output class="cu-out" id="nicNo" name="nic"></output></div>
+            <div  class="label">Nic Image : <output class="cu-out" id="nicImage" name="nicImage"></output></div>
+            <div  class="label">Driving licens : <output class="cu-out" id="dlicense" name="dlicense"></output></div>
+            <div  class="label">Driving licens Image : <output class="cu-out" id="dlicenseImage" name="dlicenseImage"></output></div>
+            <div  class="label">Address : <output class="cu-out" id="address" name="address"></output></div>
+            <div  class="label">contact No : <output class="cu-out" id="contactNo" name="contactNo"></output></div>
+            <br>
+
+            <label>
+                Brand
+                <select class="Menu form-floating mb-3" id="selectBrand" name="brand" type="text" required></select>
+            </label>
+            <div  class="label">Brand:<output class="cu-out" id="carBrand" name="brand"></output></div>
+            <div  class="label">Available Car: <output class="cu-out" id="availableCar" name="carQuantity"></output></div>
+            <div  class="label">Daily Rate Price: <output class="cu-out" id="dRate" name="dailyRate"></output></div>
+            <div  class="label">Monthly Rate Price: <output class="cu-out" id="mRate" name="monthlyRate"></output></div>
+            <br>
+            <label>
+                Rate
+                <select class="Menu form-floating mb-3" id="selectRate"  type="text">
+                    <option >Daily Rate</option>
+                    <option >Monthly Rate</option>
+                </select>
+            </label>
+            <div  class="label">Rate Type: <output id="rateType" name="rate"></output></div>
+            <br>
+<!--            <div  class="label">Rate Price: <span  ></span></div>-->
+            <br>
+            <table id="rent_receipt_form_tbl">
+                <tr><td>Rent Start Date</td><td><input  name="rentInDate" type="date" id="from_date"/></td></tr>
+                <tr><td>Rent End Date</td><td><input name="rentOutDate" type="date" id="to_date"/></td></tr>
+            </table>
+
+
+            <label>Select Driver</label>
+            <select name="d_name" id="selectDriver" class="Menu form-floating mb-3"></select>
+            <div  class="label">Name : <output class="cu-out" id="driver_name" name="driverName"></output></div>
+            <div  class="label">Age : <output class="cu-out" id="driver_age" name="driverAge"></output></div>
+            <div  class="label">Gender : <output class="cu-out" id="driver_gender" name="driverGender"></output></div>
+            <div  class="label">Contact No : <output class="cu-out" id="driver_contact" name="driverContactNo"></output></div>
+            <div  class="label">Driving licens : <output class="cu-out" id="driver_licens" name="driverLicense"></output></div>
+
+            <hr>
+            <button type="button" id="btnSubmitReq">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/bootsrap/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+
+        $("#selectRate").change(function () {
+            var displayText = $("#selectRate option:selected").val();
+            $("#rateType").val(displayText);
+            console.log(displayText);
+        });
+    })
+
+    //------------------------------------------------------------------------
+
+    $("#btnSubmitReq").click(function () {
+        alert("Done")
+        let req_number = $("#requestId").val();
+        let req_nic = $("#nicNo").val();
+        let req_brand = $("#carBrand").val();
+        let req_rate = $("#rateType").val();
+        let req_rentInDate = $("#from_date").val();
+        let req_rentOutDate = $("#to_date").val();
+        let req_driverName = $("#driver_name").val();
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/BackEnd_war/api/v1/booking",
+            contentType: 'application/json',
+            async: true,
+
+            data: JSON.stringify({
+                requestNumber: req_number,
+                nicNumber: req_nic,
+                brand: req_brand,
+                rate: req_rate,
+                rentStartDate: req_rentInDate,
+                rentEndDate: req_rentOutDate,
+                drName: req_driverName,
+                registration:"",
+                car:"",
+                driver:"",
+
+            }),
+            success: function (data) {
+                alert("work")
+                console.log(data);
+
+            }
+        });
+
+    });
+
+    //-------------------------------------------------------
+    $("#btnGetAllReq").click(function () {
+        loadAllBookings();
+    });
+    function loadAllBookings() {
+        $("#tblRentReq").empty();
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/booking",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+
+                for (let i of data.data) {
+                    var row = `<tr><td>${i.requestNumber}</td><td>${i.nicNumber}</td><td>${i.brand}</td><td>${i.rate}</td><td>${i.rentStartDate}</td><td>${i.rentEndDate}</td><td>${i.drName}</td></tr>`;
+
+                    $("#tblRentReq").append(row);
+                }
+            }
+        });
+    }
+
+    //---------------------------search customer nic--------------------------------------
+
+    $("#btnSearchNic").click(function () {
+        let nic= $("#searchNic").val();
+        if (!nic.trim().length<=0) {
+            $.ajax({
+                url: "http://localhost:8080/BackEnd_war/api/v1/registration/" + nic,
+                method: "GET",
+                async: true,
+                success: function (data, textState, xhr) {
+                    let c = data.data;
+                    $("#email").val(c.email);
+                    // $("#password").val(c.password);
+                    $("#nicNo").val(c.nic);
+                    $("#nicImage").val(c.nicImage);
+                    $("#dlicense").val(c.dlicense);
+                    $("#dlicenseImage").val(c.dlicenseImage);
+                    $("#address").val(c.address);
+                    $("#contactNo").val(c.contactNo);
+                },
+                error: function (xhr) {
+                    alert(xhr.responseJSON.data);
+                }
+            });
+        }
+    });
+
+    //----------------------get car brand-------------------------
+    loadAllCarBrands();
+
+    $("#selectBrand").click(function () {
+
+    });
+
+
+    function loadAllCarBrands() {
+        $("#selectBrand").empty();
+        $('#selectBrand').append("<option>Select</option>");
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/car",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+                for (var i in data.data) {
+                    let br = data.data[i].brand;
+                    var selectBrand = "<option>" + br + "</option>";
+                    $('#selectBrand').append(selectBrand);
+
+                }
+            }
+        });
+    }
+    $(function () {
+        $("#selectBrand").change(function(){
+            let carBrand =  searchBrand($(this).val());
+            if (carBrand != null) {
+
+            } else {
+                clearAllCarDetails();
+            }
+        });
+    })
+    function searchBrand(brand) {
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/car/brand/"+brand,
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+                let carBrand= data.data;
+                $("#carBrand").val(carBrand.brand);
+                $("#availableCar").val(carBrand.carQuantity);
+                $("#dRate").val(carBrand.dailyRate);
+                $("#mRate").val(carBrand.monthlyRate);
+            }
+        });
+
+    }
+
+    // clear all output field
+    function clearAllCarDetails() {
+        $("#carBrand").val("");
+        $("#availableCar").val("");
+        $("#dRate").val("");
+        $("#mRate").val("");
+
+
+    }
+
+
+    //----------------------get driver name-------------------------
+    loadAllDriversNames();
+
+    $("#selectDriver").click(function () {
+
+    });
+
+
+    function loadAllDriversNames() {
+        $("#selectDriver").empty();
+        $('#selectDriver').append("<option>Select</option>");
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+                for (var i in data.data) {
+                    let nm = data.data[i].driverName;
+                    var selectName = "<option>" + nm + "</option>";
+                    $('#selectDriver').append(selectName);
+
+                }
+            }
+        });
+    }
+    $(function () {
+        $("#selectDriver").change(function(){
+            let drivername =  searchDriverName($(this).val());
+            if (drivername != null) {
+
+            } else {
+                clearAllDriverDetails();
+            }
+        });
+    })
+    function searchDriverName(name) {
+        $.ajax({
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver/name/"+name,
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+               let drivername= data.data;
+                $("#driver_name").val(drivername.driverName);
+                $("#driver_age").val(drivername.driverAge);
+                $("#driver_gender").val(drivername.driverGender);
+                $("#driver_contact").val(drivername.driverContactNo);
+                $("#driver_licens").val(drivername.driverLicense);
+            }
+        });
+
+    }
+
+    // clear all output field
+    function clearAllDriverDetails() {
+        $("#driver_name").val("");
+        $("#driver_age").val("");
+        $("#driver_gender").val("");
+        $("#driver_contact").val("");
+        $("#driver_licens").val("");
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental | Driver Login</title>
+    <link rel="stylesheet" href="assets/css/DriverLogin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<!-- Wrapper Area -->
+<div class="wrapper__area" id="wrapper_Area">
+    <!-- Forms Area -->
+    <div class="forms__area">
+        <!-- Login Form -->
+        <form class="login__form" id="loginForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Driver Sign In!</h1>
+            <!-- inputs Groups -->
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="username" placeholder="Username" id="loginEmail">
+                </label>
+                <span class="input__icon"><i class="bx bx-user"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password" id="loginPassword">
+                </label>
+                <span class="input__icon">
+                    <i class="bx bx-lock"></i>
+                </span>
+                <span class="showHide__Icon">
+                    <i class="bx bx-hide __web-inspector-hide-shortcut__"></i>
+                </span>
+                <small class="input__error_message"></small>
+            </div>
+
+            <!-- Login Button -->
+            <a href="booking.html">
+                <button type="submit" class="submit-button" id="loginSubmitBtn">Sign in</button>
+            </a>
+        </form> <!-- End Login Form -->
+
+
+    </div><!-- End Forms Area -->
+
+    <!-- Aside Area -->
+    <div class="aside__area" id="aside_Area">
+        <div class="login__aside-info">
+        </div>
+        <div class="sign-up__aside-info">
+            <h4>Welcome</h4>
+            <img src="https://e.top4top.io/p_1945sidbp2.png" alt="Image">
+            <p>To Keep connected with us please login with your personal info</p>
+            <button id="aside_signIn_Btn">Sign In</button>
+        </div>
+    </div>
+</div>
+<!-- End Wrapper Area -->
+
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="assets/js/Login.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script>
+    //---------------------------------login---------------------------------------------------
+
+    $("#loginSubmitBtn").click(function () {
+
+        let re_email = $("#loginEmail").val();
+        let re_pass = $("#loginPassword").val()
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/BackEnd_war/api/v1/driver/logindriver",
+            contentType: 'application/json',
+            async: true,
+            data: JSON.stringify({
+                email: re_email,
+                password: re_pass
+            }),
+            success: function (data) {
+                if(data.code=="200"){
+                    window.location.href="http://localhost:63342/Car_Rental_System/FrontEnd/driverAccount.html?_ijt=b09q5q5mj5aif8rjf4kjjb199e"
+                }
+            },
+        });
+
+    });
+</script>
+
+</body>
+</html>
