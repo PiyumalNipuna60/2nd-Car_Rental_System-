@@ -2,6 +2,7 @@ package lk.ijse.spring.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -18,46 +19,49 @@ import javax.naming.NamingException;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+@Configuration
 @EnableJpaRepositories(basePackages = "lk.ijse.spring.repo")
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
 
     @Autowired
-    Environment env;
+    Environment environment;
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter va){
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-        bean.setJpaVendorAdapter(va);
-        bean.setDataSource(ds);
-        bean.setPackagesToScan(env.getRequiredProperty("entity.package.name"));
+        bean.setJpaVendorAdapter(va);//Vendor
+        bean.setDataSource(ds);//Connection
+        bean.setPackagesToScan(environment.getRequiredProperty("entity.package.name"));
         return bean;
     }
-   
-   @Bean
-    public DataSource dataSource() throws NamingException{
+
+    @Bean
+    public DataSource dataSource() throws NamingException {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(env.getRequiredProperty("db.url"));
-        dataSource.setUsername(env.getRequiredProperty("db.username"));
-        dataSource.setPassword(env.getRequiredProperty("db.password"));
-        dataSource.setDriverClassName(env.getRequiredProperty("db.driver.classpath"));
+        dataSource.setUrl(environment.getRequiredProperty("my.app.url"));
+        dataSource.setUsername(environment.getRequiredProperty("my.app.username"));
+        dataSource.setPassword(environment.getRequiredProperty("my.app.password"));
+        dataSource.setDriverClassName(environment.getRequiredProperty("my.app.driverclassname"));
         return dataSource;
-      // return (DataSource) new JndiTemplate().lookup("java:comp/env/jdbc/pool");
+
+        //return (DataSource) new JndiTemplate().lookup("java:comp/env/jdbc/pool");
     }
 
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
-        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-        adapter.setDatabasePlatform(env.getRequiredProperty("db.dialect"));
-        adapter.setDatabase(Database.MYSQL);
-        adapter.setShowSql(true);
-        adapter.setGenerateDdl(true);
-        return adapter;
+        HibernateJpaVendorAdapter vendor = new HibernateJpaVendorAdapter();
+        vendor.setDatabasePlatform(environment.getProperty("my.app.dialect"));
+        vendor.setDatabase(Database.MYSQL);
+        vendor.setShowSql(true);
+        vendor.setGenerateDdl(true);
+        return vendor;
     }
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         return new JpaTransactionManager(emf);
+
     }
 }
