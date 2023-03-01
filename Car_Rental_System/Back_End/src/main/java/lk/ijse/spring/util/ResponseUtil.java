@@ -11,6 +11,6 @@ import lombok.ToString;
 @ToString
 public class ResponseUtil {
     private int code;
-    private String message;
+    private String massage;
     private Object data;
 }

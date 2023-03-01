@@ -4,33 +4,21 @@ import lk.ijse.spring.dto.CustomerDTO;
 
 import java.util.List;
 
-
 public interface CustomerService {
     void saveCustomer(CustomerDTO dto);
 
+    void deleteCustomer(String id);
+
     void updateCustomer(CustomerDTO dto);
 
-    CustomerDTO searchCustomer(String customerId);
-
-    void deleteCustomer(String customerId);
+    CustomerDTO searchCustomer(String id);
 
     List<CustomerDTO> getAllCustomers();
 
-    boolean findCustomerByUsername(String username);
+    CustomerDTO findEmailAndPassword(String email, String password);
 
-    boolean findCustomerByPassword(String password);
+    boolean findUser(String email);
 
-    CustomerDTO findCustomerByUsernameAndPassword(String username, String password);
+    CustomerDTO findNic(String nic);
 
-    String generateCustomerId();
-
-    void updateCustomerStatus(String id);
-
-    List<CustomerDTO> getAllPendingCustomers();
-
-    List<CustomerDTO> getAllAcceptedCustomers();
-
-    void uploadCustomerImages(String nicfPath, String nicbPath, String licenceImgPath, String id);
-
-    int getCountOfCustomersRegistered();
 }

@@ -1,34 +1,22 @@
 package lk.ijse.spring.service;
-
 import lk.ijse.spring.dto.DriverDTO;
 
 import java.util.List;
 
-
 public interface DriverService {
-    void saveDriver(DriverDTO dto);
+     void saveDriver(DriverDTO dto);
 
-    void updateDriver(DriverDTO dto);
+     void deleteDriver(String id);
 
-    void deleteDriver(String licenceNo);
+     void updateDriver(DriverDTO dto);
 
-    DriverDTO searchDriver(String licenceNo);
+     DriverDTO searchDriver(String id);
 
-    List<DriverDTO> getAllDrivers();
+     List<DriverDTO> getAllDrivers();
 
-    boolean findDriverByUsername(String username);
+     DriverDTO findName(String name);
 
-    boolean findDriverByPassword(String password);
+     DriverDTO findEmailAndPassword(String email, String password);
 
-    DriverDTO findDriverByUsernameAndPassword(String username, String password);
 
-    void updateDriverNonAvailable(String licenceNo);
-
-    void updateDriverAvailable(String licenceNo);
-
-    List<DriverDTO> getAllAvailableDrivers();
-
-    List<DriverDTO> getAllNonAvailableDrivers();
-
-    int getCountOfDriversByStatus(boolean availability);
 }
